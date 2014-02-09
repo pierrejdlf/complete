@@ -1,40 +1,269 @@
+
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#home">europe • moving • image</a>
+        </div>
 
-{{! The big featured header on the homepage, with the site logo and description }}
-<header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-    <div class="vertical">
-        <div id="site-head-content" class="inner">
-
-            {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-            <h1 class="blog-title">{{@blog.title}}</h1>
-            <h2 class="blog-description">{{@blog.description}}</h2>
+        <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#call" data-localize="menu.europe">europe in a word</a></li>
+                <li><a href="#conditions" data-localize="menu.conditions">conditions</a></li>
+                <li><a href="#about" data-localize="menu.about">about</a></li>
+                <li>
+                    <div class="langselect btn-group">
+                        <button type="button" data-lang="en" class="btn btn-default">en</button>
+                        <button type="button" data-lang="fr" class="btn btn-default">fr</button>
+                        <button type="button" data-lang="es" class="btn btn-default">es</button>
+                        <button disabled type="button" data-lang="de" class="btn btn-default">de</button>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-</header>
+</nav>
 
-{{! The main content area on the homepage }}
-<main class="content" role="main">
+<div class="intro-header" id="home">
 
-    {{! Each post will be output using this markup }}
-    {{#foreach posts}}
+    <div class="container">
 
-    <article class="{{post_class}}">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1 data-localize="title">Europe in a word</h1>
+                    <h3 data-localize="subtitle">100 days to tell your europe in one word</h2>
+                </div>
+            </div>
+        </div>
 
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt}}&hellip;</p>
-        </section>
-    </article>
+    </div>
 
-    {{/foreach}}
+</div>
 
-    {{!! After all the posts, we have the previous/next pagination links }}
-    {{pagination}}
+<div class="content-section-a" id="call">
 
-</main>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading" data-localize="call.title">Call</h2>
+                <p class="lead" data-localize="call.first">
+
+                </p>
+                <p class="lead" data-localize="call.second">
+        
+                </p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="/assets/img/offline.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="content-section-b" id="conditions">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-6 col-sm-6">
+                <!--<hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">
+
+                </h2>-->
+                <p class="lead">
+                <ul>
+                    <li><h3>un film, un mot</h3>
+                    choissisez un mot que l'Europe vous évoque et réalisez votre film autour de cette association. 
+                    </li>
+                    <li><h3>forme</h3>
+                    aucune restriction: vous êtes libres de proposer une fiction, un documentaire, un film d'animation ...
+                    </li>
+                    <li><h3>durée</h3>
+                    la durée minimum est de 1 minute<br/>
+                    la durée maximum est de 10 minutes
+                    </li>
+                    <li><h3>sous-titres</h3>
+                    votre film doit être sous-titré en anglais
+                    </li>
+                    <li><h3>date limite d'inscription</h3>
+                    vous devez remplir le formulaire ci-contre et envoyer votre film avant le <b>26 mai 2014</b>
+                    </li>
+                    <li><h3>récompenses</h3>
+                    au 31 mai seront décernés:<br/>
+                    • le prix du jury: 1000 €<br/>
+                    • le prix du public: 500 €
+                    </li>
+                    
+                   
+                </ul>
+                </p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <h2 class="section-heading">Formulaire</h2>
+                <div class="clearfix"></div>
+                <div>
+
+                   <form class="form-horizontal" role="form">
+
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Réalisateur</label>
+                        <div class="col-sm-4">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="nom">
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="prénom">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Date de naissance</label>
+                        <div class="col-sm-4">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="jj/mm/aaaa">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Adresse</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="address">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-5">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="ville">
+                        </div>
+                        <div class="col-sm-5">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="pays">
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="email">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Titre</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputEmail3" placeholder="titre">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">Description</label>
+                        <div class="col-sm-10">
+                          <textarea type="textarea" rows="3" class="form-control" id="description" placeholder="Description">
+
+                          </textarea>
+                        </div>
+                    </div>
+
+                      <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">Film</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="description" placeholder="vimeo / direct link">
+                        </div>
+                    </div>
+
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default">Send</button>
+                        </div>
+                      </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content-section-a" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <img class="img-responsive" src="/assets/img/plustot.jpg" alt="">
+            </div>
+            <div class="col-lg-5 col-sm-6 col-lg-offset-2">
+                <h2 class="section-heading"></h2>
+                <p class="lead">
+                <b>Un peu plus tôt</b>   est un collectif qui regroupe une dizaine de jeunes auteurs, cinéastes, designers, ingénieurs européens.
+                </p>
+                <p class="lead">
+                En 2014, avec le projet <b>Europe Moving Image</b>, le collectif souhaite mettre en lien des auteurs (amateurs ou professionnels) qui utilisent l'image comme langage. L'appel à film <b>Europe in a word</b> est la première étape d’une réflexion plus longue sur la question de l’Europe et de ses représentations.
+                </p>
+                <p class="lead">
+                Le projet est soutenu par le programme <b>PEJA</b> de l'Union Européenne.
+                D'autre part nous remercions <i>Béatrice Durey</i> et l'association <i>Nisi Masa</i> pour leur soutien et leurs conseils.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="banner">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Spread the word!</h2>
+            </div>
+            <div class="col-lg-6">
+                <ul class="list-inline banner-social-buttons">
+                    <li><a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li><a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li><a href="#home">Home</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a href="#about">About</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a href="#services">Services</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted small">Copyright &copy; Your Company 2013. All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
