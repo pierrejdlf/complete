@@ -14,7 +14,7 @@
 
     <!-- Custom Google Web Font -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
 
     <!-- Add custom CSS here -->
     <link href="css/landing-page.css" rel="stylesheet">
@@ -22,9 +22,7 @@
 </head>
 
 <body>
-<div id="content"></div>
 
-<script id="all-content" type="text/x-handlebars-template">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -39,10 +37,17 @@
 
             <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#call">europe in a word</a></li>
-                    <li><a href="#conditions">{{menu_1}}</a></li>
-                    <li><a href="#about">{{menu_2}}</a></li>
-                    <li><a href="#"><b>en</b> / fr / es / de</a></li>
+                    <li><a href="#call" data-localize="menu.europe">europe in a word</a></li>
+                    <li><a href="#conditions" data-localize="menu.conditions">conditions</a></li>
+                    <li><a href="#about" data-localize="menu.about">about</a></li>
+                    <li>
+                        <div class="langselect btn-group">
+                            <button type="button" data-lang="en" class="btn btn-default">en</button>
+                            <button type="button" data-lang="fr" class="btn btn-default">fr</button>
+                            <button type="button" data-lang="es" class="btn btn-default">es</button>
+                            <button disabled type="button" data-lang="de" class="btn btn-default">de</button>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -55,10 +60,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>l'Europe en <i>un</i> mot</h1>
-                        <h3>100 days</h2>
-                        <h3>- movies from 30 sec. until 10 minutes -</h3>
-                        <h3>tell us <i>your</i> europe in a word</h3>
+                        <h1 data-localize="title">Europe in a word</h1>
+                        <h3 data-localize="subtitle">100 days to tell your europe in one word</h2>
                     </div>
                 </div>
             </div>
@@ -75,16 +78,12 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">
-                        Appel à films
-                    </h2>
-                    <p class="lead">
+                    <h2 class="section-heading" data-localize="call.title">Call</h2>
+                    <p class="lead" data-localize="call.first">
 
-<i>Europe in a word</i> est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter leur Europe en un mot et en un film.
-            </p>
-            <p class="lead">
-            <i>Europe in a word</i> proposera un abécédaire visuel  de la réalité multiforme qu’est l’Europe d’aujourd’hui.
-
+                    </p>
+                    <p class="lead" data-localize="call.second">
+            
                     </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -221,29 +220,6 @@
 
     </div>
 
-
-<!--     <div class="content-section-a" id="aboutX">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and
-                        <br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    
-
     <div class="content-section-a" id="about">
         <div class="container">
             <div class="row">
@@ -288,12 +264,9 @@
             </div>
 
         </div>
-        <!-- /.container -->
 
     </div>
-    <!-- /.banner -->
 
-    <!--
     <footer>
         <div class="container">
             <div class="row">
@@ -317,10 +290,8 @@
         </div>
     </footer>
 
-</script>
-
-<script src="js/handlebars-v1.3.0.js"></script>
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery.localize.js"></script>
 <script src="js/bootstrap.js"></script>
 
 </body>
@@ -329,17 +300,15 @@
 
     $(function() {
 
-        //console.log(windows.location);
 
-        // manage traductions
-        var contents_fr = {
-            menu_1: "conditions",
-            menu_2: "about",
-        }
-        var source      = $("#all-content").html();
-        var template    = Handlebars.compile(source);
-        var html        = template(contents_fr);
-        $("#content").html(html);
+        // i18n
+        //$("[data-localize]").localize("emi");//, { skipLanguage: /^en/ });
+
+        $(".langselect button").on("click", function(e) {
+            var lang = $(e.target).data("lang");
+            console.log("switching to: "+lang);
+            $("[data-localize]").localize("emi", { language:lang });
+        });
 
         // smooth links to sections
         $('a[href*=#]:not([href=#])').click(function() {
