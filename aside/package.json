@@ -1,0 +1,8 @@
+{
+  "author": "emi",
+  "name": "emi",
+  "version": "0.1.1",
+  "dependencies": {
+    "underscore":"1.4.x"
+  }
+}
