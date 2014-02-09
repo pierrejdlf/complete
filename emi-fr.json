@@ -1,0 +1,17 @@
+{
+	"menu": {
+		"europe": "europe in a word",
+		"conditions": "conditions",
+		"about": "à propos",
+	},
+
+	"title": "l'Europe en un mot",
+	"subtitle":  "100 jours pour raconter votre Europe",
+
+	"call": {
+		"title": "Appel à films",
+		"first": "<i>Europe in a word</i> est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter leur Europe en un mot et en un film.",
+		"second": "<i>Europe in a word</i> proposera un abécédaire visuel  de la réalité multiforme qu’est l’Europe d’aujourd’hui.",
+	},
+
+}
