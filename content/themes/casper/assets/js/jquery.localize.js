@@ -177,4 +177,6 @@
 
   $.localize.data = {};
 
+  console.log("fucking loadaed.");
+  
 }).call(this);

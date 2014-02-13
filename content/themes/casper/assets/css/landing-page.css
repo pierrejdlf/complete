@@ -8,6 +8,28 @@ body, h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 
+/* MENU BAR */
+
+/* languages buttons */
+.btn-group {
+	padding: 8px;
+}
+.navbar-nav > li {
+	-webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+	-moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+	-o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
+	transition: all 0.3s ease-out; 
+}
+.navbar-nav > li .btn-group {
+	margin: 6px;
+}
+.navbar-nav > li:hover {
+	background: rgb(235, 236, 240);
+}
+
+
+
+
 .lead {
 	font-size: 18px;
 	font-weight: 400;
@@ -17,7 +39,7 @@ body, h1, h2, h3, h4, h5, h6 {
 	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
 	padding-bottom: 50px;
 	color: #f8f8f8;
-	background: url(../img/intro-bg.jpg) no-repeat center center;
+	background: url(../img/intro.jpg) no-repeat center center;
 	background-size: cover;
 	text-align: center;
 }
@@ -99,7 +121,7 @@ body, h1, h2, h3, h4, h5, h6 {
 .banner {
 	padding: 100px 0;
 	color: #f8f8f8;
-	background: url(../img/banner-bg.jpg) no-repeat center center;
+	background: url(../img/footer.jpg) no-repeat center center;
 	background-size: cover;
 }
 

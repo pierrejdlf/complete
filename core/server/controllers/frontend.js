@@ -12,11 +12,39 @@ var Ghost  = require('../../ghost'),
     when   = require('when'),
     url    = require('url'),
 
+    email   = require("emailjs"),
 
     ghost  = new Ghost(),
     frontendControllers;
 
+
 frontendControllers = {
+    'formsub': function (req, res, next) {
+        console.log("received form !");
+        //console.log(JSON.stringify(req));
+
+        var server  = email.server.connect({
+           user:        "login", 
+           password:    "password",
+           host:        "smtp.gmail.com", 
+           ssl:         true
+        });
+        
+        console.log("sending email now.");
+
+        server.send({
+           text:    "i hope this works, man", 
+           from:    "you <europemovingimage@gmail.com>", 
+           to:      "pite <pierre.jdlf@gmail.com>", //, another <another@gmail.com>",
+           //cc:      "else <else@gmail.com>",
+           subject: "testing emailjs sender"
+
+        }, function(err, message) {
+            console.log(err || message);
+        });
+
+        res.json({status:"done"});
+    },
     'homepage': function (req, res, next) {
         // Parse the page number
         var pageParam = req.params.page !== undefined ? parseInt(req.params.page, 10) : 1,

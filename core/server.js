@@ -363,11 +363,16 @@ when(ghost.init()).then(function () {
 
     // ### Frontend routes
     /* TODO: dynamic routing, homepage generator, filters ETC ETC */
+
+    // emi
+    //server.get('/form/submit/', frontend.formsub);
+
     server.get('/rss/', frontend.rss);
     server.get('/rss/:page/', frontend.rss);
     server.get('/page/:page/', frontend.homepage);
     server.get('/:slug/', frontend.single);
     server.get('/', frontend.homepage);
+
 
     // Are we using sockets? Custom socket or the default?
     function getSocket() {
