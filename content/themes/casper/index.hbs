@@ -24,7 +24,7 @@
                     <div class="langselect btn-group btn-group-xs">
                         <button type="button" data-lang="en" class="btn btn-default">en</button>
                         <button type="button" data-lang="fr" class="btn btn-default">fr</button>
-                        <button disabled type="button" data-lang="es" class="btn btn-default">es</button>
+                        <button type="button" data-lang="es" class="btn btn-default">es</button>
                         <button disabled type="button" data-lang="de" class="btn btn-default">de</button>
                     </div>
                 </li>
@@ -55,16 +55,16 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-5 col-sm-6">
+            <div class="col-md-5">
                 <hr class="section-heading-spacer">
                 <div class="clearfix"></div>
                 <h2 class="section-heading" data-localize="call.title">Call</h2>
                 <p class="lead" data-localize="call.first"></p>
                 <p class="lead" data-localize="call.second"></p>
             </div>
-            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+<!--             <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                 <img class="img-responsive" src="/assets/img/carte.jpg" alt="">
-            </div>
+            </div> -->
         </div>
 
     </div>
@@ -88,7 +88,7 @@
                 </p>
             </div>
             <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <h2 class="section-heading">Formulaire</h2>
+                <h2 class="section-heading" data-localize="form.title"></h2>
                 <div class="clearfix"></div>
                 <div>
 
@@ -97,65 +97,94 @@
 <form class="form-horizontal" action="https://docs.google.com/forms/d/1L51Pq2VBTVFuZ-Ym1XsFbW4t4lIMPUWNvQ7GFsgjqwo/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
 
 <div class="form-group">
-    <label for="inputEmail3" class="col-md-2 control-label text-right">Name</label>
-    <div class="col-md-5 col-md-offset-1">
-        <input type="text" class="form-control" name="entry.357757859" id="entry_357757859" placeholder="FirstName">
-    </div>
+    <label for="inputEmail3" class="col-md-3 control-label text-right">Name</label>
     <div class="col-md-4">
-        <input type="text" class="form-control" name="entry.1192647375" id="entry_1192647375" placeholder="LastName">
+        <input type="text" class="form-control input-sm" name="entry.357757859" id="entry_357757859" placeholder="First Name" required>
+    </div>
+    <div class="col-md-5">
+        <input type="text" class="form-control input-sm" name="entry.1192647375" id="entry_1192647375" placeholder="Last Name" required>
     </div>
 </div>
 
 <div class="form-group">
-    <label for="inputEmail3" class="col-md-2 control-label text-right">Birthdate</label>
-    <div class="col-md-5 col-md-offset-1">
-        <input type="date" class="form-control" name="entry.1560426846" id="entry_1560426846" dir="auto" aria-label="Birth Date" aria-required="true" required="">
+    <label for="inputEmail3" class="col-md-3 control-label text-right">Birthdate</label>
+    <div class="col-md-5">
+        <input type="date" class="form-control input-sm" name="entry.1560426846" id="entry_1560426846" dir="auto" aria-label="Birth Date" aria-required="true" required>
     </div>
 </div>
 
 <div class="form-group">
-    <label for="inputEmail3" class="col-md-2 control-label">Mail</label>
-    <div class="col-md-5 col-md-offset-1">
-        <input type="text" class="form-control" name="entry.1052008402" id="entry_1052008402" placeholder="Mail">
+    <label for="inputEmail3" class="col-md-3 control-label">Email</label>
+    <div class="col-md-5">
+        <input type="email" class="form-control input-sm" name="entry.1052008402" id="entry_1052008402" placeholder="you@email.com" required>
     </div>
-    <label for="inputEmail3" class="col-md-2 control-label">Title</label>
-    <div class="col-md-5 col-md-offset-1">
-        <input type="text" class="form-control" name="entry.1186770144" id="entry_1186770144" placeholder="Title">
+</div>
+<div class="form-group">
+    <label for="inputEmail3" class="col-md-3 control-label">Address</label>
+    <div class="col-md-9">
+        <input type="text" class="form-control input-sm" name="entry.1451192912" id="entry_1451192912" placeholder="Your address" required>
     </div>
-    <label for="inputEmail3" class="col-md-2 control-label">Word</label>
-    <div class="col-md-5 col-md-offset-1">
-        <input type="text" class="form-control" name="entry.1186770144" id="entry_1186770144" placeholder="Word">
+</div>
+<div class="form-group">
+    <div class="col-md-4 col-md-offset-3">
+        <input type="text" class="form-control input-sm" name="entry.1620171405" id="entry_1620171405" placeholder="City" required>
     </div>
-    <label for="inputEmail3" class="col-md-2 control-label">Length</label>
+    <div class="col-md-5">
+        <input type="text" class="form-control input-sm" name="entry.1799176386" id="entry_1799176386" placeholder="Country" required>
+    </div>
+</div>
+<div class="form-group">
+    <label for="inputEmail3" class="col-md-3 control-label">Website</label>
+    <div class="col-md-9">
+        <input type="text" class="form-control input-sm" name="entry.335176714" id="entry_335176714" placeholder="http://your.website.com, or twitter account">
+    </div>
+</div>
+<hr/>
+<div class="form-group">
+    <label for="inputEmail3" class="col-md-3 control-label">Word</label>
+    <div class="col-md-5">
+        <input type="text" class="form-control input-sm" name="entry.175051657" id="entry_175051657" placeholder="The word you choosed" required>
+    </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" name="entry.2141829988" id="entry_2141829988" placeholder="Length">
+        <input type="text" class="form-control input-sm" name="entry.1058682053" id="entry_1058682053" placeholder="Language" required>
     </div>
-    <label for="inputEmail3" class="col-md-2 control-label">Codirector</label>
-    <div class="col-md-5 col-md-offset-1">
-        <input type="text" class="form-control" name="entry.1754972630" id="entry_1754972630" placeholder="Codirector">
+</div>
+<div class="form-group">
+    <label for="inputEmail3" class="col-md-3 control-label">Title</label>
+    <div class="col-md-9">
+        <input type="text" class="form-control input-sm" name="entry.1186770144" id="entry_1186770144" placeholder="My little yellow Europe" required>
     </div>
-    <label for="inputEmail3" class="col-md-2 control-label">Country</label>
+</div>
+<div class="form-group">
+    <label for="inputEmail3" class="col-md-3 control-label">Length</label>
     <div class="col-md-4">
-        <input type="text" class="form-control" name="entry.1905480123" id="entry_1905480123" placeholder="Country">
+        <input type="text" class="form-control input-sm" name="entry.2141829988" id="entry_2141829988" placeholder="8min 42s" required>
     </div>
-    <label for="inputEmail3" class="col-md-2 control-label">Website</label>
-    <div class="col-md-4">
-        <input type="text" class="form-control" name="entry.335176714" id="entry_335176714" placeholder="Website">
+</div>
+<div class="form-group">
+    <label for="inputEmail3" class="col-md-3 control-label">Co-director(s)</label>
+    <div class="col-md-9">
+        <input type="text" class="form-control input-sm" name="entry.1754972630" id="entry_1754972630" placeholder="Mark Jorigh, Paul Glittuck, Göran Brust, ...">
     </div>
 </div>
 
 <div class="form-group">
-    <label for="inputEmail3" class="col-md-2 control-label">Synopsis</label>
-    <div class="col-md-9 col-md-offset-1">
-    <textarea type="textarea" rows="3" class="form-control" name="entry.118662242" id="entry_118662242" placeholder="Description"></textarea>
+    <label for="inputEmail3" class="col-md-3 control-label">Synopsis</label>
+    <div class="col-md-9">
+        <textarea type="textarea" rows="3" class="form-control input-sm" name="entry.118662242" id="entry_118662242" placeholder="One or two paragraph(s)" required></textarea>
     </div>
 </div>
 
 <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-    <button type="submit" class="btn btn-default">Submit</button>
+    <div class="col-md-7 col-md-offset-3 control-label">
+        <input type="checkbox" name="entry.2020558658" id="group_2020558658_1" role="checkbox" value="i have read and accepted the conditions available on http://europemovingimage.eu" required> I've read & accepted the <a href="/assets/data/europe_moving_image.pdf" target="_new">General Terms and Conditions</a>
+    </div>
+    <div class="ol-md-1">
+        <button type="submit" name="submit" class="btn btn-default">Submit</button>
     </div>
 </div>
+
+
 </form>
 
                 </div>
@@ -166,13 +195,13 @@
 
 </div>
 
-<div class="content-section-a" id="about">
+<div class="content-section-c" id="about">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5 col-sm-6">
+<!--             <div class="col-lg-5 col-sm-6">
                 <img class="img-responsive" src="/assets/img/plustot.jpg" alt="">
-            </div>
-            <div class="col-lg-5 col-sm-6 col-lg-offset-2">
+            </div> -->
+            <div class="col-md-6 col-md-offset-6">
                 <h2 class="section-heading"></h2>
                 <div data-localize="about"></div>
             </div>
