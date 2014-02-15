@@ -16,8 +16,9 @@ langs['fr'] = {
 	},
 	"form": {
 		"title":"Envoyez-nous votre film !",
-		"accept": "I've read & accepted the <a class='regl'>General Terms and Conditions</a>",
+		"accept": "J'ai lu et j'accepte les <a class='regl'>conditions générales</a>",
 		"Name":"Nom",
+		"Birthdate":"Date de naissance",
 		"Email":"Email",
 		"Address":"Addresse",
 		"Website":"Site web",
@@ -25,7 +26,7 @@ langs['fr'] = {
 		"Title":"Titre",
 		"Link":"Lien",
 		"Length":"Durée",
-		"Codirectors":"Co-réalisateur/trice (s)",
+		"Codirectors":"Co-réalisateur(s)",
 		"Synopsis":"Synopsis",
 		"submit":"Soumettre",
 	},
@@ -89,6 +90,7 @@ langs['en'] = {
     	"title": "Register your film !",
     	"accept": "I've read & accepted the <a class='regl'>General Terms and Conditions</a>",
 		"Name":"Name",
+		"Birthdate":"Birthdate",
 		"Email":"Email",
 		"Address":"Address",
 		"Website":"Website",
@@ -161,6 +163,7 @@ langs['es'] = {
 		"title":"Mandanós tu pelicula",
 		"accept": "he leido y acceptado el <a class='regl'>reglamento</a>",
 		"Name":"Nombre",
+		"Birthdate":"Fecha de nacimiento",
 		"Email":"Email",
 		"Address":"Dirección",
 		"Website":"Sitio web",
@@ -183,7 +186,7 @@ langs['es'] = {
 		"la duración minima es de 1 minuto<br/>"+
         "la duración maxima es de 10 minutos"+
 		"</li>"+
-		"<li><h3>subtitles</h3>"+
+		"<li><h3>subtítulos</h3>"+
 		"tu peli tiene que estar subtitulada en inglés"+
 		"</li>"+
 		"<li><h3>fecha límite de inscripción</h3>"+
