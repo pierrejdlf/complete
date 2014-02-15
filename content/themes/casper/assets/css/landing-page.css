@@ -33,11 +33,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
+.navbar-header img {
+	/*width: 40px;*/
+	float: left;
+	padding-top: 5px;
+	margin-right: 7px;
+}
+.navbar-header .navbar-brand {
+	color: #BDBDBD;
+}
 
 .lead {
 	font-size: 17px;
 	font-weight: 400;
+	text-align: justify;
 }
 
 .intro-header {
@@ -71,16 +80,18 @@ Share Tech
 	font-size: 7em;
 	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.9);
     font-family: 'Lily Script One', sans-serif;
-
+    opacity: 0;
     -webkit-transition: opacity 2s ease-in;
 	-moz-transition: opacity 2s ease-in;
 	-ms-transition: opacity 2s ease-in;
 	-o-transition: opacity 2s ease-in;
 	transition: opacity 2s ease-in;
-    opacity: 1;
 }
 .intro-message h1.loading {
 	opacity: 0;
+}
+.intro-message h1.loaded {
+	opacity: 1;
 }
 .intro-message h3 {
 	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.9);
@@ -163,7 +174,7 @@ Share Tech
 	background: none;
 	/*box-shadow: inset 0px 0px 40px 40px rgba(255, 255, 255, 1);*/
 	padding-top: 60px;
-	padding-bottom: 15%;
+	padding-bottom: 20%;
 }
 @media (min-width: 992px) {
 	.content-section-a {
@@ -186,6 +197,9 @@ Share Tech
 	background: white;
 	padding-right: 30px;
 	border-radius: 5px;
+}
+form hr {
+	border-top: 2px solid #E0E0E0;
 }
 .control-label {
 	font-size: 14px;
@@ -275,7 +289,10 @@ Share Tech
 
 footer {
 	background-color: #f8f8f8;
-	padding: 50px 0;
+	padding: 5px 0;
+}
+footer img {
+	margin: 20px;
 }
 
 p.copyright {

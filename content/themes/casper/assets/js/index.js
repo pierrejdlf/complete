@@ -9,10 +9,9 @@
 
     $(document).ready(function(){
         
-        console.log("loaded index.js !");
+        //console.log(langs);
 
-        console.log(langs);
-		// parallax
+		// parallax ?
 		//see http://winwardo.co.uk/parallax/ 
 
 		var switchToLang = function(lang) {
@@ -34,9 +33,22 @@
 	            });
 	       	else
 	       		console.log("lang not found");
+
+	       	// update link to reglement
+	       	$(".regl").attr('target',"_new");
+			$(".regl").attr('href',"/assets/data/europe_moving_image_"+lang+".pdf");
 		};
 
-		switchToLang('fr');
+		var avLangs = ['en','fr','es'];
+		var blang = window.navigator.userLanguage || window.navigator.language;
+		console.log("browser lang: "+blang);
+		blang = blang.split('-')[0];
+		if(avLangs.indexOf(blang)!=-1) {
+			switchToLang(blang);
+		} else {
+			switchToLang('en');
+		}
+		
 
         // i18n
         $(".langselect button").on("click", function(e) {
