@@ -22,6 +22,9 @@ h1, h2, h3, h4, h5, h6 {
 	-o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
 	transition: all 0.3s ease-out; 
 }
+.navbar-nav > li a {
+	display: inline-block;
+}
 .navbar-nav > li .btn-group {
 	margin: 6px;
 }
@@ -181,7 +184,7 @@ Share Tech
 .content-section-b form {
 	padding: 15px;
 	background: white;
-	padding-right: 20px;
+	padding-right: 30px;
 	border-radius: 5px;
 }
 .control-label {

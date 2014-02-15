@@ -2,23 +2,22 @@ var langs = {};
 
 langs['en'] = {
 	"menu": {
-		"europe": "europe in a word",
-		"conditions": "conditions",
+		"europe": "call for films",
+		"conditions": "submission",
 		"about": "about",
 	},
-
 	"title": "Europe in a word",
-	"subtitle":  "100 days to film your Europe in a word",
+	"subtitle": "100 days to tell your Europe in a word",
 
 	"call": {
 		"title": "Call for films",
-		"first": "<i> Europe in a word </ i> is a participatory media project that invites amateurs and professional filmmakers to tell their Europe in a word and a movie.",
-        "second": "<i> Europe in a word </ i> wants to propose a visual primer of the multifaceted reality of Europe today.",
+		"first": "<i>Europe in a word</i> is open to all europeans younger than 30 years.",
+		"second": "It is a participatory media project that invites amateurs and professional filmmakers to tell their Europe in a word and a movie.",
+        "third": "The collected films will propose a visual primer of the multifaceted reality of Europe today.",
     },
     "form": {
     	"title": "Register your film !",
     },
-
 	"conditions": ""+
 		"<li><h3>un film, un mot</h3>"+
 		"choose a word that you associate with Europe and make your movie around it. "+
@@ -42,6 +41,8 @@ langs['en'] = {
 		"• public award: 500 €"+
 		"</li>",
 
+	"abouttitle": "About us",
+
 	"about": ""+
         "<p class='lead'>"+
         "<b>Un peu plus tôt</b>   is a group of a dozen young writers, filmmakers, designers, engineers from Europe."+
@@ -60,30 +61,25 @@ langs['fr'] = {
 		"europe": "appel à films",
 		"conditions": "inscription",
 		"about": "à propos",
-		
 	},
-
-	"title": "<i>Europe</i>   en   un  <i>mot</i>",
+	"title": "L'Europe  en  un  mot",
 	"subtitle":  "100 jours pour raconter votre Europe en un film",
 
 	"call": {
 		"title": "Appel à films",
-		"first": "<i>Europe in a word</i> est un appel à films ouvert à tous les européens de moins de 30 ans.",
+		"first": "<i>Europe en un mot</i> est un appel à films ouvert à tous les européens de moins de 30 ans.",
 		"second": "C'est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter leur Europe en un mot et en un film.",
 		"third": "Les films collectés formeront un abécédaire visuel  de la réalité multiforme qu’est l’Europe d’aujourd’hui.",
-		"-": "kj",
 	},
-
 	"form": {
 		"title":"Envoyez-nous votre film !",
 	},
-
 	"conditions": ""+
-		"<li><h3>un film, un mot</h3>"+
-		"choissisez un mot que l'Europe vous évoque et réalisez votre film autour de cette association. "+
+		"<li><h3>un mot, un film</h3>"+
+		"choissisez un mot associé à l'Europe et réalisez votre film"+
 		"</li>"+
 		"<li><h3>forme</h3>"+
-		"aucune restriction: vous êtes libres de proposer une fiction, un documentaire, un film d'animation ..."+
+		"aucune restriction: vous êtes libres de proposer une fiction, un documentaire, un film d'animation ... Laissez libre cours à votre imagination"+
 		"</li>"+
 		"<li><h3>durée</h3>"+
 		"la durée minimum est de 1 minute<br/>"+
@@ -97,8 +93,8 @@ langs['fr'] = {
 		"</li>"+
 		"<li><h3>récompenses</h3>"+
 		"au 31 mai seront décernés<br/>"+
-		"• un prix du jury d'une valeur de <b>1000 €</b><br/>"+
-		"• un prix du public d'une valeur de <b>500 €</b>"+
+		"• un prix du jury d'une valeur de <i>1000 €</i><br/>"+
+		"• un prix du public d'une valeur de <i>500 €</i>"+
 		"</li>"+
 		"<li><h3>réglement</h3>"+
 		"le réglement complet est disponible "+
