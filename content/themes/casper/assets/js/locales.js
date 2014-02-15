@@ -57,19 +57,21 @@ langs['en'] = {
 };
 langs['fr'] = {
 	"menu": {
-		"europe": "europe in a word",
-		"conditions": "conditions",
-		"about": "about",
+		"europe": "appel à films",
+		"conditions": "inscription",
+		"about": "à propos",
 		
 	},
 
-	"title": "l'Europe en un mot",
-	"subtitle":  "100 jours pour raconter votre Europe",
+	"title": "<i>Europe</i>   en   un  <i>mot</i>",
+	"subtitle":  "100 jours pour raconter votre Europe en un film",
 
 	"call": {
 		"title": "Appel à films",
-		"first": "<i>Europe in a word</i> est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter leur Europe en un mot et en un film.",
-		"second": "<i>Europe in a word</i> proposera un abécédaire visuel  de la réalité multiforme qu’est l’Europe d’aujourd’hui.",
+		"first": "<i>Europe in a word</i> est un appel à films ouvert à tous les européens de moins de 30 ans.",
+		"second": "C'est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter leur Europe en un mot et en un film.",
+		"third": "Les films collectés formeront un abécédaire visuel  de la réalité multiforme qu’est l’Europe d’aujourd’hui.",
+		"-": "kj",
 	},
 
 	"form": {
@@ -94,14 +96,16 @@ langs['fr'] = {
 		"vous devez remplir le formulaire ci-contre et envoyer votre film avant le <b>26 mai 2014</b>"+
 		"</li>"+
 		"<li><h3>récompenses</h3>"+
-		"au 31 mai seront décernés:<br/>"+
-		"• le prix du jury: 1000 €<br/>"+
-		"• le prix du public: 500 €"+
+		"au 31 mai seront décernés<br/>"+
+		"• un prix du jury d'une valeur de <b>1000 €</b><br/>"+
+		"• un prix du public d'une valeur de <b>500 €</b>"+
 		"</li>"+
 		"<li><h3>réglement</h3>"+
 		"le réglement complet est disponible "+
 		"<a href='/assets/data/europe_moving_image.pdf' target='_new'>ici</a>"+
 		"</li>",
+
+	"abouttitle": "Qui sommes-nous ?",
 
 	"about": ""+
         "<p class='lead'>"+
@@ -109,11 +113,7 @@ langs['fr'] = {
         "</p>"+
         "<p class='lead'>"+
         "En 2014, avec le projet <b>Europe Moving Image</b>, le collectif souhaite mettre en lien des auteurs (amateurs ou professionnels) qui utilisent l'image comme langage. L'appel à film <b>Europe in a word</b> est la première étape d’une réflexion plus longue sur la question de l’Europe et de ses représentations."+
-        "</p>"+
-        "<p class='lead'>"+
-        "Le projet est soutenu par le programme <b>PEJA</b> de l'Union Européenne."+
-        "D'autre part nous remercions <i>Béatrice Durey</i> et l'association <i>Nisi Masa</i> pour leur soutien et leurs conseils."+
-        "</p>"
+        "</p>",
 };
 
 langs['es'] = {
