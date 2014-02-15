@@ -79,15 +79,14 @@ Share Tech
 	margin: 0;
 	font-size: 7em;
 	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.9);
-    font-family: 'Lily Script One', sans-serif;
-    opacity: 0;
-    -webkit-transition: opacity 2s ease-in;
-	-moz-transition: opacity 2s ease-in;
-	-ms-transition: opacity 2s ease-in;
-	-o-transition: opacity 2s ease-in;
-	transition: opacity 2s ease-in;
-}
-.intro-message h1.loading {
+    /*font-family: 'Lily Script One', sans-serif;
+    font-family: 'Gabriela', sans-serif;*/
+    font-family: 'Over the Rainbow', sans-serif;
+    -webkit-transition: opacity 4s;
+	-moz-transition: opacity 4s;
+	-ms-transition: opacity 4s;
+	-o-transition: opacity 4s;
+	transition: opacity 4s;
 	opacity: 0;
 }
 .intro-message h1.loaded {
@@ -95,9 +94,19 @@ Share Tech
 }
 .intro-message h3 {
 	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.9);
-	margin-top: 40px;
+	margin-top: 80px;
 	font-family: 'Ruda', sans-serif;
+	-webkit-transition: opacity 4s;
+	-moz-transition: opacity 4s;
+	-ms-transition: opacity 4s;
+	-o-transition: opacity 4s;
+	transition: opacity 4s;
+	opacity: 0;
 }
+.intro-message h3.loaded {
+	opacity: 1;
+}
+
 
 .intro-divider {
 	width: 400px;

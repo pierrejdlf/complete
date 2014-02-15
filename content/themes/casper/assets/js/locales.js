@@ -16,6 +16,18 @@ langs['fr'] = {
 	},
 	"form": {
 		"title":"Envoyez-nous votre film !",
+		"accept": "I've read & accepted the <a class='regl'>General Terms and Conditions</a>",
+		"Name":"Nom",
+		"Email":"Email",
+		"Address":"Addresse",
+		"Website":"Site web",
+		"Word":"Mot",
+		"Title":"Titre",
+		"Link":"Lien",
+		"Length":"Durée",
+		"Codirectors":"Co-réalisateur/trice (s)",
+		"Synopsis":"Synopsis",
+		"submit":"Soumettre",
 	},
 	"conditions": ""+
 		"<li><h3>un mot, un film</h3>"+
@@ -75,6 +87,18 @@ langs['en'] = {
     },
     "form": {
     	"title": "Register your film !",
+    	"accept": "I've read & accepted the <a class='regl'>General Terms and Conditions</a>",
+		"Name":"Name",
+		"Email":"Email",
+		"Address":"Address",
+		"Website":"Website",
+		"Word":"Word",
+		"Title":"Title",
+		"Link":"Link",
+		"Length":"Length",
+		"Codirectors":"Co-director(s)",
+		"Synopsis":"Synopsis",
+		"submit":"Submit",
     },
 	"conditions": ""+
 		"<li><h3>a word, a film</h3>"+
@@ -95,9 +119,13 @@ langs['en'] = {
 		"please fill the form and send us your movie before <b>may 26th 2014</b>"+
 		"</li>"+
 		"<li><h3>awards</h3>"+
-		"the names of the winners will be given on may 31st 2014:<br/>"+
+		"the names of the winners will be given on may 31st 2014<br/>"+
 		"• jury award: <i>1000 €</i><br/>"+
 		"• public award: <i>500 €</i>"+
+		"</li>"+
+		"<li><h3>Terms</h3>"+
+		"You can get the full terms and conditions "+
+		"<a class='regl'>here</a>"+
 		"</li>",
 	"abouttitle": "About us",
 	"about": ""+
@@ -117,54 +145,71 @@ langs['en'] = {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 langs['es'] = {
 	"menu": {
-		"europe": "europe in a word",
-		"conditions": "condiciones",
+		"europe": "convocatoria",
+		"conditions": "inscripción",
 		"about": "acerca de",
 	},
-	"title": "Europe in a word",
-	"subtitle":  "&00 días para filmar tu Europa en una palabra",
+	"title": "Europa en una palabra",
+	"subtitle": "100 días para contar tu Europa en una palabra",
 	"call": {
 		"title": "Convocatoria",
-		"first": "<i> Europe in a word </i> es un proyecto participativo que invita a los cineastas aficionados y profesionales a contar su Europa en una palabra y una pelicula.",
-        "second": "<i> Europe in a word </i> quiere proponer una cartilla visual de la realidad multifacética de la Europa de hoy.",
-        "third":"",
+		"first": "<i>Europa en una palabra</i> está abierto a todos los europeos de menos de 30 años.",
+		"second": "Es un proyecto participativo que invita a los cineastas aficionados y profesionales a contar su Europa en una palabra y una pelicula.",
+        "third": "Las pelliculas producirán una cartilla visual de la realidad multifacética de la Europa de hoy.",
 	},
 	"form": {
-		"title":"Envoyez-nous votre film !",
+		"title":"Mandanós tu pelicula",
+		"accept": "he leido y acceptado el <a class='regl'>reglamento</a>",
+		"Name":"Nombre",
+		"Email":"Email",
+		"Address":"Dirección",
+		"Website":"Sitio web",
+		"Word":"Palabra",
+		"Title":"Titulo",
+		"Link":"Vinculo",
+		"Length":"Duración",
+		"Codirectors":"Co-director/a(s)",
+		"Synopsis":"Synopsis",
+		"submit":"Enviar",
 	},
 	"conditions": ""+
-		"<li><h3>una peli, una palabra</h3>"+
-		"elige una palabra que asocias con Europa y contruye tu peli alrededor de esta asociación. "+
+		"<li><h3>una palabra, una pelí</h3>"+
+		"elige una palabra que asocias con Europa y construye tu pelí alrededor de esta asociación."+
 		"</li>"+
-		"<li><h3>forme</h3>"+
-		"sin restricciones: puede ser una ficción, un ensayo documental, un collage fotográfico, ... lo que quieras ..."+
+		"<li><h3>forma</h3>"+
+		"sin restricciones: puede ser una ficción, un ensayo documental, un collage fotográfico, ... lo que quieras !"+
 		"</li>"+
 		"<li><h3>durée</h3>"+
-		" La duración minima es de 1 minuto<br/>"+
-        " La duración maxima es de 10 minutos"+
+		"la duración minima es de 1 minuto<br/>"+
+        "la duración maxima es de 10 minutos"+
 		"</li>"+
 		"<li><h3>subtitles</h3>"+
-		"Tu peli tiene que estar subtitulada en inglés"+
+		"tu peli tiene que estar subtitulada en inglés"+
 		"</li>"+
 		"<li><h3>fecha límite de inscripción</h3>"+
-		"Por favor, rellena el formulario y envíanos tu película antes del <b> 26 de mayo 2014 </b>" +
+		"por favor, rellena el formulario y envíanos tu película antes del <b>26 de mayo 2014</b>" +
 		"</li>"+
 		"<li><h3>premios</h3>"+
-		" Los premios serán anunciados el 31 de mayo 2014: <br/> " +
-        " • Premio del jurado : 1.000 € <br/> " +
-        " • Premio del público : 500 € "+
-        " </li>",
-    "abouttitle": "Qui sommes-nous ?",
+		" los premios serán anunciados el 31 de mayo 2014<br/> " +
+        "• Premio del jurado : <i>1.000 €</i><br/>" +
+        "• Premio del público : <i>500 €</i>"+
+        "</li>"+
+       	"<li><h3>reglamento</h3>"+
+		"el reglamento completo esta disponible "+
+		"<a class='regl'>aquí</a>"+
+		"</li>",
+    "abouttitle": "¿ Quiénes somos ?",
 	"about": ""+
         "<p class='lead'>"+
-        "<b>Un peu plus tôt</b> es un grupo constituido de una docena de jóvenes escritores , cineastas, diseñadores, ingenieros de Europa."+
+        "<b>«Un peu plus tôt»</b> es un grupo constituido de una docena de jóvenes escritores, ingenieros, cineastas, diseñadores de Europa."+
         "</p>"+
         "<p class='lead'>"+
-        "En 2014, con el proyecto <b> Europe Moving Image </b>, el grupo quiere crear vinculos entre artistas europeos (aficionados o professionales) que utilizan la imagen como lenguaje. La convocatoria de películas <b> Europa en una palabra < / b > es el primer paso en una reflexión más larga sobre la cuestión de Europa y de sus representaciones."+ 
-         "</p>" + 
-         "class='lead'> <p" + 
-         "El proyecto es apoyado por el programa <b> PEJA </b> de la Unión Europea. "  + 
-         "Damos las Gracias a Béatrice <i>Durey</i> y la asociación <i>Nisi Masa</i> por su apoyo y consejos." + 
-         "</p>",
+        "En 2014, con el proyecto <b>Europe Moving Image</b>, el grupo quiere crear vinculos entre artistas "+
+    	"europeos (aficionados o professionales) que utilizan la imagen como lenguaje. "+
+    	"La convocatoria de películas <b>Europa en una palabra</b> es el primer paso en una reflexión más larga "+
+    	"sobre la cuestión de Europa y de sus representaciones."+ 
+        "</p>"+
+		"<p class='lead'>"+
+		"<a href='mailto:info@europemovingimage.eu'>Contáctanos</a>",
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

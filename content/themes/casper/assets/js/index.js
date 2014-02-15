@@ -48,11 +48,11 @@
 		} else {
 			switchToLang('en');
 		}
-		
 
         // i18n
         $(".langselect button").on("click", function(e) {
             var lang = $(e.target).data("lang");
+            if(!lang) lang = $(e.target).parent().data("lang");
             console.log("switching to: "+lang);
 
             //$("[data-localize]").localize("emi", { language:lang });
@@ -96,6 +96,12 @@
                 }
             }
         });
+        setTimeout(function() {
+        	$(".intro-message h3").addClass('loaded');
+        },1000);
+        setTimeout(function() {
+        	$(".intro-message h1").addClass('loaded');
+        },1500);
 
     });
 
