@@ -6,13 +6,13 @@ langs['fr'] = {
 		"conditions": "inscription",
 		"about": "à propos",
 	},
-	"title": "Appel à films.",
-	"subtitle":  "Europe in a word.",//100 jours pour raconter votre Europe en un film",
+	"title": "appel à films",
+	"subtitle":  "europe in a word",//100 jours pour raconter votre Europe en un film",
 	"call": {
 		"title": "appel à films",
-		"first": "<i>Europe en un mot</i> est un appel à films ouvert à tous les européens de moins de 30 ans.",
+		"first": "<i>Europe in a word</i> est un appel à films ouvert à tous les européens de moins de 30 ans.",
 		"second": "C'est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter l'Europe en un mot et en un film.",
-		"third": "Les films collectés formeront un abécédaire visuel  de la réalité multiforme qu’est l’Europe d’aujourd’hui.",
+		"third": "Les films collectés formeront un abécédaire visuel de l’Europe d’aujourd’hui.",
 	},
 	"form": {
 		"title":"envoyez-nous votre film !",
@@ -59,13 +59,11 @@ langs['fr'] = {
 	"abouttitle": "qui sommes-nous ?",
 	"about": ""+
         "<p class='lead'>"+
-        "<i>«Un peu plus tôt»</i> est un collectif qui regroupe une dizaine de jeunes auteurs, ingénieurs, cinéastes, designers européens."+
-        "</p>"+
-        "<p class='lead'>"+
-        "En 2014, avec le projet <b>Europe Moving Image</b>, le collectif souhaite mettre en lien des "+
-        "auteurs (amateurs ou professionnels) qui utilisent l'image comme langage. "+
+        "<b>Europe Moving Image</b> est porté par le collectif <i>«Un peu plus tôt»</i> qui regroupe une dizaine de jeunes auteurs, ingénieurs, cinéastes, designers européens."+
         "L'appel à film <b>Europe in a word</b> est la première étape d’une réflexion plus longue "+
-        "sur la question de l’Europe et de ses représentations."+
+        "sur l’Europe et ses représentations."+
+        "<p class='lead'>"+
+        "Plus d'infos <a href='www.europemovingimage.eu/'>ici</a> !"+
         "</p>"+
         "<p class='lead'>"+
         "N'hésitez pas à nous <a href='mailto:info@europemovingimage.eu'>contacter</a> !"+
@@ -135,7 +133,7 @@ langs['en'] = {
         "<i>«Un peu plus tôt»</i> is a group of a dozen young european writers, engineers, filmmakers, designers."+
         "</p>"+
         "<p class='lead'>"+
-        "In 2014, with the project <b>Europe Moving Image</b>, the group wants to create "+
+        "In 2014, with the project <b>Europe Moving Image</b>, the group wants to create "+
     	"links between european artists (amateur or professional) who use the image as a language. "+
     	"The call for films <b>Europe in a word</b> is the first step in a longer reflection "+
     	"on the question of Europe and its representations. "+ 
@@ -151,16 +149,16 @@ langs['es'] = {
 		"conditions": "inscripción",
 		"about": "acerca de",
 	},
-	"title": "Europa en una palabra",
-	"subtitle": "100 días para contar tu Europa en una palabra",
+	"title": "convocatoria",
+	"subtitle": "europe in a word",
 	"call": {
-		"title": "Convocatoria",
-		"first": "<i>Europa en una palabra</i> está abierto a todos los europeos de menos de 30 años.",
+		"title": "convocatoria",
+		"first": "<i>Europe in a word</i> está abierto a todos los europeos de menos de 30 años.",
 		"second": "Es un proyecto participativo que invita a los cineastas aficionados y profesionales a contar su Europa en una palabra y una pelicula.",
         "third": "Las pelliculas producirán una cartilla visual de la realidad multifacética de la Europa de hoy.",
 	},
 	"form": {
-		"title":"Mandanós tu pelicula",
+		"title":"mandanós tu pelicula",
 		"accept": "he leido y acceptado el <a class='regl'>reglamento</a>",
 		"Name":"Nombre",
 		"Birthdate":"Fecha de nacimiento",
@@ -201,17 +199,17 @@ langs['es'] = {
 		"el reglamento completo esta disponible "+
 		"<a class='regl'>aquí</a>"+
 		"</li>",
-    "abouttitle": "¿ Quiénes somos ?",
+    "abouttitle": "¿ quiénes somos ?",
 	"about": ""+
         "<p class='lead'>"+
         "<b>«Un peu plus tôt»</b> es un grupo constituido de una docena de jóvenes escritores, ingenieros, cineastas, diseñadores de Europa."+
         "</p>"+
         "<p class='lead'>"+
-        "En 2014, con el proyecto <b>Europe Moving Image</b>, el grupo quiere crear vinculos entre artistas "+
+        "En 2014, con el proyecto <b>Europe Moving Image</b>, el grupo quiere crear vinculos entre artistas "+
     	"europeos (aficionados o professionales) que utilizan la imagen como lenguaje. "+
     	"La convocatoria de películas <b>Europa en una palabra</b> es el primer paso en una reflexión más larga "+
     	"sobre la cuestión de Europa y de sus representaciones."+ 
-        "</p>"+
+        "</p>"+
 		"<p class='lead'>"+
 		"<a href='mailto:info@europemovingimage.eu'>Contáctanos</a>",
 };
