@@ -71,23 +71,13 @@ button[disabled] img {
 	position: relative;
 }
 
-/*
----- curved
-Gabriela        trop enfant
-Lily Script One
-
----- stricts
-Ruda
-Share Tech
-*/
-
 .intro-message h1 {
 	margin: 0;
 	font-size: 7em;
 	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.9);
     /*font-family: 'Lily Script One', sans-serif;
     font-family: 'Gabriela', sans-serif;*/
-    font-family: 'Over the Rainbow', sans-serif;
+    /*font-family: 'Over the Rainbow', sans-serif;*/
     -webkit-transition: opacity 4s;
 	-moz-transition: opacity 4s;
 	-ms-transition: opacity 4s;

@@ -63,7 +63,7 @@ langs['fr'] = {
         "L'appel à film <b>Europe in a word</b> est la première étape d’une réflexion plus longue "+
         "sur l’Europe et ses représentations."+
         "<p class='lead'>"+
-        "Plus d'infos <a href='www.europemovingimage.eu/'>ici</a> !"+
+        "Plus d'infos <a href='http://www.europemovingimage.eu'>ici</a> !"+
         "</p>"+
         "<p class='lead'>"+
         "N'hésitez pas à nous <a href='mailto:info@europemovingimage.eu'>contacter</a> !"+
