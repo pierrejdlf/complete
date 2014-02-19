@@ -6,16 +6,16 @@ langs['fr'] = {
 		"conditions": "inscription",
 		"about": "à propos",
 	},
-	"title": "L'Europe  en  un  mot",
-	"subtitle":  "100 jours pour raconter votre Europe en un film",
+	"title": "Appel à films.",
+	"subtitle":  "Europe in a word.",//100 jours pour raconter votre Europe en un film",
 	"call": {
-		"title": "Appel à films",
+		"title": "appel à films",
 		"first": "<i>Europe en un mot</i> est un appel à films ouvert à tous les européens de moins de 30 ans.",
-		"second": "C'est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter leur Europe en un mot et en un film.",
+		"second": "C'est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter l'Europe en un mot et en un film.",
 		"third": "Les films collectés formeront un abécédaire visuel  de la réalité multiforme qu’est l’Europe d’aujourd’hui.",
 	},
 	"form": {
-		"title":"Envoyez-nous votre film !",
+		"title":"envoyez-nous votre film !",
 		"accept": "J'ai lu et j'accepte les <a class='regl'>conditions générales</a>",
 		"Name":"Nom",
 		"Birthdate":"Date de naissance",
@@ -56,7 +56,7 @@ langs['fr'] = {
 		"le réglement complet est disponible "+
 		"<a class='regl'>ici</a>"+
 		"</li>",
-	"abouttitle": "Qui sommes-nous ?",
+	"abouttitle": "qui sommes-nous ?",
 	"about": ""+
         "<p class='lead'>"+
         "<i>«Un peu plus tôt»</i> est un collectif qui regroupe une dizaine de jeunes auteurs, ingénieurs, cinéastes, designers européens."+
@@ -78,16 +78,16 @@ langs['en'] = {
 		"conditions": "submission",
 		"about": "about",
 	},
-	"title": "Europe in a word",
-	"subtitle": "100 days to tell your Europe in a word",
+	"title": "call for films",
+	"subtitle": "europe in a word",
 	"call": {
-		"title": "Call for films",
+		"title": "call for films",
 		"first": "<i>Europe in a word</i> is open to all europeans younger than 30 years.",
 		"second": "It is a participatory media project that invites amateur and professional filmmakers to tell their Europe in a word and a movie.",
         "third": "The collected films will propose a visual primer of the multifaceted reality of Europe today.",
     },
     "form": {
-    	"title": "Register your film !",
+    	"title": "register your film !",
     	"accept": "I've read & accepted the <a class='regl'>General Terms and Conditions</a>",
 		"Name":"Name",
 		"Birthdate":"Birthdate",
@@ -129,7 +129,7 @@ langs['en'] = {
 		"You can get the full terms and conditions "+
 		"<a class='regl'>here</a>"+
 		"</li>",
-	"abouttitle": "About us",
+	"abouttitle": "about us",
 	"about": ""+
         "<p class='lead'>"+
         "<i>«Un peu plus tôt»</i> is a group of a dozen young european writers, engineers, filmmakers, designers."+

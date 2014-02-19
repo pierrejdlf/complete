@@ -1,11 +1,11 @@
 body, html {
 	height: 100%;
 	width: 100%;
-	font-family: 'Droid Serif', serif;
+	font-family: 'Open Sans';
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Droid Serif', serif;
+	font-family: 'Open Sans';
 	/*font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 	font-weight: 700;
 }
@@ -16,6 +16,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn-group {
 	padding: 8px;
 }
+
+button[disabled] img {
+	opacity: 0.2;
+}
+
+
 .navbar-nav > li {
 	-webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
 	-moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
@@ -41,10 +47,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 .navbar-header .navbar-brand {
 	color: #BDBDBD;
+	font-size: 14px;
 }
 
 .lead {
-	font-size: 17px;
+	font-family: 'Open Sans';
+	font-size: 15px;
 	font-weight: 400;
 	text-align: justify;
 }
@@ -61,8 +69,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro-message {
 	position: relative;
-	padding-top: 20%;
-	padding-bottom: 10%;
 }
 
 /*
@@ -94,14 +100,26 @@ Share Tech
 }
 .intro-message h3 {
 	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.9);
-	margin-top: 80px;
 	font-family: 'Ruda', sans-serif;
+	font-weight: 600;
 	-webkit-transition: opacity 4s;
 	-moz-transition: opacity 4s;
 	-ms-transition: opacity 4s;
 	-o-transition: opacity 4s;
 	transition: opacity 4s;
 	opacity: 0;
+	text-align: left;
+}
+.intro-message h3.title {
+	margin-bottom: 8px;
+	padding-bottom: 6px;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	font-size: 2.3em;
+}
+.intro-message h3.subtitle {
+	margin-top:0;
+	font-style: italic;
+	font-size: 1.2em;
 }
 .intro-message h3.loaded {
 	opacity: 1;
@@ -147,7 +165,10 @@ Share Tech
 
 /* with courtesy of http://onedollar.bophana.org/ */
 .countdown {
- 	margin-top: 5%;
+	text-align: right;
+	top: 3px;
+	margin-top: 100px;
+	margin-bottom: 38%;
 }
 .countdown div {
 	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.9);
@@ -177,6 +198,11 @@ Share Tech
 
 
 
+h2 {
+	font-family: 'Ruda', sans-serif;
+	font-weight: 600;
+}
+
 .content-section-a {
 	background-color: #f8f8f8;
 	padding: 50px 0;
@@ -188,7 +214,7 @@ Share Tech
 @media (min-width: 992px) {
 	.content-section-a {
 		background: url(../img/carte.jpg) no-repeat center right;
-		background-size: 50%;
+		background-size: 55%;
 	}
 	.content-section-c {
 		background: url(../img/about.jpg) no-repeat center center;
@@ -228,19 +254,17 @@ form hr {
 	color: rgb(55, 140, 207);
 }
 .content-section-c {
-	padding-top: 40px;
-	padding-bottom: 15%;
 }
 .content-section-c .about {
-	background: rgba(255, 255, 255, 0.84);
-	border-radius: 5px;
-	padding: 20px;
+	background: rgba(255, 255, 255, 0.91);
+	padding: 30px;
 	padding-top: 5px;
 }
 
 
 .section-heading {
 	margin-bottom: 30px;
+	padding
 }
 
 .section-heading-spacer {
