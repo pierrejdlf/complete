@@ -37,6 +37,12 @@
 	       	// update link to reglement
 	       	$(".regl").attr('target',"_new");
 			$(".regl").attr('href',"/assets/data/europe_moving_image_"+lang+".pdf");
+
+			// more about project modal
+			$("#modalTrigger").on("click", function(e) {
+				console.log("modal trigger");
+				$('#projectModal').modal();
+			});
 		};
 
 		var avLangs = ['en','fr','es'];
