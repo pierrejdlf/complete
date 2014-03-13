@@ -223,10 +223,10 @@ langs['es'] = {
 		"tu peli tiene que estar subtitulada en inglés"+
 		"</li>"+
 		"<li><h3>fecha límite de inscripción</h3>"+
-		"por favor, rellena el formulario y envíanos tu película antes del <b>26 de mayo 2014</b>" +
+		"por favor, rellena el formulario y envíanos tu película antes del <b>30 de mayo 2014</b>" +
 		"</li>"+
 		"<li><h3>premios</h3>"+
-		" los premios serán anunciados el 30 de mayo 2014<br/> " +
+		" los premios serán anunciados el 7 de junio 2014<br/> " +
         "• Premio del jurado : <i>1.000 €</i><br/>" +
         "• Premio del público : <i>500 €</i>"+
         "</li>"+
