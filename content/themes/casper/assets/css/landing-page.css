@@ -49,7 +49,7 @@ button[disabled] img {
 	padding-top: 5px;
 	margin-right: 7px;
 }
-.navbar-header .navbar-brand {
+.navbar-header .navbar-ourbrand {
 	color: #BDBDBD;
 	font-size: 14px;
 }
@@ -255,7 +255,9 @@ form hr {
 	padding: 30px;
 	padding-top: 5px;
 }
-
+.content-section-space {
+	height: 4px;
+}
 
 .section-heading {
 	margin-bottom: 30px;

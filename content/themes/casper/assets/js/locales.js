@@ -4,6 +4,7 @@ langs['fr'] = {
 	"menu": {
 		"europe": "appel à films",
 		"conditions": "inscription",
+		"map": "carte",
 		"about": "à propos",
 	},
 	"title": "appel à films",
@@ -106,6 +107,7 @@ langs['en'] = {
 	"menu": {
 		"europe": "call for films",
 		"conditions": "submission",
+		"map": "map",
 		"about": "about",
 	},
 	"title": "call for films",
@@ -179,6 +181,7 @@ langs['es'] = {
 	"menu": {
 		"europe": "convocatoria",
 		"conditions": "inscripción",
+		"map": "mapa",
 		"about": "acerca de",
 	},
 	"title": "convocatoria",
@@ -223,7 +226,7 @@ langs['es'] = {
 		"por favor, rellena el formulario y envíanos tu película antes del <b>26 de mayo 2014</b>" +
 		"</li>"+
 		"<li><h3>premios</h3>"+
-		" los premios serán anunciados el 31 de mayo 2014<br/> " +
+		" los premios serán anunciados el 30 de mayo 2014<br/> " +
         "• Premio del jurado : <i>1.000 €</i><br/>" +
         "• Premio del público : <i>500 €</i>"+
         "</li>"+

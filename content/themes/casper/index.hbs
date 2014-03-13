@@ -10,8 +10,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="/assets/img/logos/logo_tiny.png"/>
-            <a class="navbar-brand" href="#home">europe • moving • image</a>
+            <a class="navbar-ourbrand" href="#home">
+                <img src="/assets/img/logos/logo_tiny.png"/>
+                <!-- europe • moving • image -->
+            </a>
         </div>
 
         <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
@@ -22,14 +24,15 @@
                     <a href="https://www.facebook.com/europemoving" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a></li>
                 <li><a href="#call" data-localize="menu.europe"></a></li>
                 <li><a href="#conditions" data-localize="menu.conditions"></a></li>
+                <li><a href="#mapanchor" data-localize="menu.map"></a></li>
                 <li><a href="#about" data-localize="menu.about"></a></li>
                 <li>
                     <div class="langselect btn-group btn-group-xs">
                         <button type="button" data-lang="en" class="btn btn-default"><img src="/assets/img/flags/flag_en.png"/></button>
                         <button type="button" data-lang="fr" class="btn btn-default"><img src="/assets/img/flags/flag_fr.png"/></button>
                         <button type="button" data-lang="es" class="btn btn-default"><img src="/assets/img/flags/flag_es.png"/></button>
-                        <button disabled type="button" data-lang="it" class="btn btn-default"><img src="/assets/img/flags/flag_it.png"/></button>
-                        <button disabled type="button" data-lang="de" class="btn btn-default"><img src="/assets/img/flags/flag_de.png"/></button>
+                        <!--<button disabled type="button" data-lang="it" class="btn btn-default"><img src="/assets/img/flags/flag_it.png"/></button>
+                        <button disabled type="button" data-lang="de" class="btn btn-default"><img src="/assets/img/flags/flag_de.png"/></button>-->
                     </div>
                 </li>
             </ul>
@@ -234,6 +237,28 @@
     </div>
 </div> -->
 
+
+<!-- 
+
+<div class="content-section-space"></div>
+{{! the interactive map }}
+<div id="mapanchor">
+    <div id="map"></div>
+    <script id="plouf-template-emi" type="text/x-handlebars-template">
+      <div class="plouf-container {{markertype}}">
+        <div class="content">
+          <div class="meta">meta</div>
+          <div class="title">{{title}}</div>
+          <div class="text">{{description}}</div>
+          <div class="ellipsis"></div>
+        </div>
+      </div>
+    </script>
+</div>
+<div class="content-section-space"></div>
+
+-->
+
 <div class="content-section-c" id="about">
     <div class="container">
         <div class="row">
@@ -246,6 +271,8 @@
         </div>
     </div>
 </div>
+
+
 
 <footer class="site-footer">
     <!--<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>-->

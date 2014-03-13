@@ -96,7 +96,7 @@
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     $('html,body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top - 50
                     }, 1000);
                     return false;
                 }
@@ -109,6 +109,75 @@
         	$(".intro-message h1").addClass('loaded');
         },1500);
 
+
+        // at the end of everything, load the map
+        ////////////////////////////////////////////
+        var initMap = function() {
+	        var cloudmadeAttribution = 'MD &copy;2011 OSM contribs, Img &copy;2011 CloudMade';
+	        var dev = window.location.hostname == "localhost";
+
+	        // init map on div, with all required options
+	        var p = Ploufmap({
+	          map: "map", // map div id (carefull with css !)
+	          useServer: false,
+			  locateButton: false,
+
+	          leaflet: {
+	            center:  L.latLng(47.975,12.129),
+	            zoom: 4,
+		        scrollWheelZoom: false,
+		      },
+
+	          clusterize: true,
+
+	          baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.hflfi81j/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
+	          markers: { 'https://a.tiles.mapbox.com/v3/minut.hflfi81j/markers.geojson':'word' },
+	          
+	          // handlebar template for a slide showing a plouf
+	          templates: {
+	            word: Handlebars.compile($("#plouf-template-emi").html()),
+	          },
+
+	          // define icons
+	          icons: {
+	            // icon_example: function(data) {
+	            //  return L.icon({
+	            //     iconUrl: 'http://cdn.leafletjs.com/leaflet-0.6.4/images/marker-icon.png',
+	            //     shadowUrl: 'http://cdn.leafletjs.com/leaflet-0.6.4/images/marker-shadow.png',
+	            //     iconSize: [25, 41],
+	            //     iconAnchor: [12, 40],
+	            //     popupAnchor: [0, -40],
+	            //     shadowSize: [41, 41],
+	            //     shadowAnchor: [12, 40]
+	            // })
+	            // },
+	            // following could allow you to use font-awesome standard markers
+	            // http://fortawesome.github.io/Font-Awesome/icons/
+	            // 'red', 'darkred', 'orange', 'green', 'darkgreen', 'blue', 'purple', 'darkpuple', 'cadetblue'
+	            // icon_awesome: L.AwesomeMarkers.icon({
+	            //         prefix:         'fa',
+	            //         icon:           value.split("_")[0],
+	            //         markerColor:    value.split("_")[1]
+	            //         //iconColor:#BBBBBB,
+	            //         //spin:true,
+	            //     });
+	            ///////////////////////////////////////////////////
+	            word: function(p,clustCount) {              
+	              var cla = 'word';
+	              if(clustCount>1) {
+	                cla += " cluster";
+	              }
+	              return L.divIcon({
+	                iconSize: [110, 50],
+	                html: "<div class='"+cla+"'>"+p.title+"</div>",
+	                popupAnchor: [0, 0]
+	              });
+	            },
+	          }
+	        });
+		};
+
+		//initMap();
     });
 
 }(jQuery));
