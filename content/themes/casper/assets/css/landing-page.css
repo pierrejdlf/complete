@@ -270,7 +270,37 @@ form hr {
 	float: left;
 }
 
-.banner {
+
+/*
+	MAP
+*/
+#map {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+
+/*
+	FILMS
+*/
+
+.content-section-films {
+	background: rgb(243, 243, 243);
+}
+.films {
+	text-align: left;
+}
+
+.film {
+	margin: 7px;
+	width: 280px;
+	height: 230px;
+	background: red;
+	display: inline-block;
+}
+
+/*.banner {
 	padding: 100px 0;
 	color: #f8f8f8;
 	background: url(../img/footer.jpg) no-repeat center center;
@@ -290,7 +320,10 @@ form hr {
 .banner-social-buttons {
 	float: right;
 	margin-top: 0;
-}
+}*/
+
+
+
 
 @media (max-width: 1199px) {
 	ul.banner-social-buttons {
