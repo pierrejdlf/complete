@@ -152,7 +152,7 @@
   			}
   		});
     };
-    loadFilms();
+    //loadFilms();
 
 
     // at the end of everything, load the map
@@ -164,7 +164,7 @@
       leaflet: {
         zoom: 5,
         minZoom: 4,
-        maxZoom: 9,
+        maxZoom: 6,
         locateButton: false,
         scrollWheelZoom: false,
         fullscreenControl: false,
@@ -206,7 +206,7 @@
                       '<div class="content" style="background-image: url({{imgurl}});">'+
                           '<div class="word">{{title}}</div>'+
                           '{{#if movie}}'+
-                          '<div class="click">click to watch the film</div>'+
+                          //'<div class="click">click to watch the film</div>'+
                           '{{/if}}'+
                       '</div>'+
                       '</a>'+
