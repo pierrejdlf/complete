@@ -14,6 +14,7 @@ langs['fr'] = {
 		"first": "<i>Europe in a word</i> est un appel à films ouvert à tous les européens de moins de 30 ans.",
 		"second": "C'est un projet multimédia participatif qui invite les cinéastes amateurs et professionnels à raconter l'Europe en un mot et en un film.",
 		"third": "Les films collectés formeront un abécédaire visuel de l’Europe d’aujourd’hui.",
+    "video":'<iframe width="100%" height="300" src="//www.youtube.com/embed/K1ugIVXdMhM" frameborder="0" allowfullscreen></iframe>',
 	},
 	"form": {
 		"title":"envoyez-nous votre film !",
@@ -116,11 +117,12 @@ langs['en'] = {
 		"title": "call for films",
 		"first": "<i>Europe in a word</i> is open to all europeans younger than 30 years.",
 		"second": "It is a participatory media project that invites amateur and professional filmmakers to tell their Europe in a word and a movie.",
-        "third": "The collected films will propose a visual primer of the multifaceted reality of Europe today.",
-    },
-    "form": {
-    	"title": "register your film !",
-    	"accept": "I've read & accepted the <a class='regl'>General Terms and Conditions</a>",
+    "third": "The collected films will propose a visual primer of the multifaceted reality of Europe today.",
+    "video":'<iframe width="100%" height="300" src="//www.youtube.com/embed/x7IT5iPgeqg" frameborder="0" allowfullscreen></iframe>',
+  },
+  "form": {
+  	"title": "register your film !",
+  	"accept": "I've read & accepted the <a class='regl'>General Terms and Conditions</a>",
 		"Name":"Name",
 		"Birthdate":"Birthdate",
 		"Email":"Email",
@@ -133,7 +135,7 @@ langs['en'] = {
 		"Codirectors":"Co-director(s)",
 		"Synopsis":"Synopsis",
 		"submit":"Submit",
-    },
+  },
 	"conditions": ""+
 		"<li><h3>a word, a film</h3>"+
 		"choose a word that you associate with Europe and make your movie around it"+
@@ -190,7 +192,8 @@ langs['es'] = {
 		"title": "convocatoria",
 		"first": "<i>Europe in a word</i> está abierto a todos los europeos de menos de 30 años.",
 		"second": "Es un proyecto participativo que invita a los cineastas aficionados y profesionales a contar su Europa en una palabra y una pelicula.",
-        "third": "Las pelliculas producirán una cartilla visual de la realidad multifacética de la Europa de hoy.",
+    "third": "Las pelliculas producirán una cartilla visual de la realidad multifacética de la Europa de hoy.",
+    "video":'<iframe width="100%" height="300" src="//www.youtube.com/embed/QPwh1KgAwBg" frameborder="0" allowfullscreen></iframe>',
 	},
 	"form": {
 		"title":"mandanós tu pelicula",

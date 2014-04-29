@@ -204,7 +204,6 @@ h2 {
 	background: none;
 	/*box-shadow: inset 0px 0px 40px 40px rgba(255, 255, 255, 1);*/
 	padding-top: 60px;
-	padding-bottom: 20%;
 }
 @media (min-width: 992px) {
 	.content-section-a {
