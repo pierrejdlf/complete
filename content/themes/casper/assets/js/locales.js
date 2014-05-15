@@ -1,6 +1,10 @@
 var langs = {};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 langs['fr'] = {
+  "map": {
+    "films": "¡ l'Europe de vos films !",
+    "tweets": "¡ l'Europe de vos mots <a class='hashlink' href='https://twitter.com/search?f=realtime&q=%23europeinaword&src=hash' target='_new'>#europeinaword</a> !",
+  },
 	"menu": {
 		"europe": "appel à films",
 		"conditions": "inscription",
@@ -105,6 +109,10 @@ langs['fr'] = {
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 langs['en'] = {
+  "map": {
+    "films": "¡ Europe with your films !",
+    "tweets": "¡ Europe with your <a class='hashlink' href='https://twitter.com/search?f=realtime&q=%23europeinaword&src=hash' target='_new'>#europeinaword</a> words !",
+  },
 	"menu": {
 		"europe": "call for films",
 		"conditions": "submission",
@@ -180,6 +188,10 @@ langs['en'] = {
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 langs['es'] = {
+  "map": {
+    "films": "¡ su Europa !",
+    "tweets": "¡ Europa con sus palabras <a class='hashlink' href='https://twitter.com/search?f=realtime&q=%23europeinaword&src=hash' target='_new'>#europeinaword</a> !",
+  },
 	"menu": {
 		"europe": "convocatoria",
 		"conditions": "inscripción",

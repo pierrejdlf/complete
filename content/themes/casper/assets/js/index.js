@@ -154,6 +154,14 @@
     };
     //loadFilms();
 
+
+
+
+
+
+    // at the end of everything, load the map
+    ////////////////////////////////////////////
+
     var countries = ["UnitedKingdom","Ireland","Portugal","Spain","france","Belgium","Netherlands","Germany","Switzerland","Italy","Denmark","Sweden","Norway","Finland","Austria","CzechRepublic","Slovenia","Croatia","Hungary","Slovakia","Poland","Lithuania","Latvia","Estonia","Belarus","Ukraine","Moldava","Romania","Serbia","BosniaHerzegovina","Montenegro","Albania","Kosovo","Macedonia","Bulgaria","Greece","Iceland"];
     var countregexp = new RegExp(countries.join('|'),'i');
 
@@ -170,9 +178,6 @@
       return _.sortBy(list,function(t){return -t.length});
     };
 
-
-    // at the end of everything, load the map
-    ////////////////////////////////////////////
     var cloudmadeAttribution = 'MD &copy;2011 OSM contribs, Img &copy;2011 CloudMade';
     
     ////////////////////////////////////////////
@@ -187,7 +192,7 @@
         minZoom: 5,
         maxZoom: 7,
         locateButton: false,
-        //scrollWheelZoom: false,
+        scrollWheelZoom: false,
         fullscreenControl: false,
         maxBounds: L.latLngBounds( L.latLng(34.0162,-11.6015),L.latLng(62.6741,40.9570) )
       },
@@ -246,7 +251,7 @@
           return L.divIcon({
             iconSize: [22,22],
             iconAnchor: [0,22],
-            tml: Handlebars.compile(
+            html: Handlebars.compile(
               '<div class="skull hint--bottom" data-hint="click to watch the film !">'+
                   '<i class="mark fa fa-{{icon}}"></i>'+
                   '<div class="arrow"></div>'+
@@ -271,29 +276,27 @@
 
 
 
-	  // var p = Ploufmap(_.extend(pmapconfig, {
-   //    map: "mapfilms",
-   //    //baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.i87kbj5g/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
-   //    baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.hflfi81j/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
-   //    markers: {
-   //      'https://a.tiles.mapbox.com/v3/minut.hflfi81j/markers.geojson':'emi',
-   //    },
-   //  }));
+	  var p = new Ploufmap(_.extend({
+      mapid: "mapfilms",
+      baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.hflfi81j/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
+      markers: {
+        'http://a.tiles.mapbox.com/v3/minut.hflfi81j/markers.geojson':'emi',
+      },
+    },pmapconfig));
 
 
 
 
-    var q = Ploufmap(_.extend(pmapconfig, {
-      map: "maptweets",
+    var q = new Ploufmap(_.extend({
+      mapid: "maptweets",
       baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.i87kbj5g/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
-      //baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.hflfi81j/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
       markers: {
         'tweet_eutrack': 'wordeon',
         'tweet_euword': 'wordeon',
         'tweet_eusearch': 'wordeon',
         'tweet_eulocs': 'wordeon',
       },
-    }));
+    },pmapconfig));
 
 
 

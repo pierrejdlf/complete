@@ -273,10 +273,17 @@ form hr {
 /*
 	MAP
 */
+.maptitle {
+	text-align: center;
+	margin: 50px;
+}
+.hashlink {
+	color: #3b88c3;
+}
 .mapband {
   width: 100%;
-  height: 650px;
-  overflow: hidden;
+  height: 450px;
+  /*overflow: hidden;*/
 }
 
 
