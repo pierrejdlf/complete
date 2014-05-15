@@ -273,7 +273,7 @@ form hr {
 /*
 	MAP
 */
-#map {
+.mapband {
   width: 100%;
   height: 650px;
   overflow: hidden;

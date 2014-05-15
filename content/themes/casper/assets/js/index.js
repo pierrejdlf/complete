@@ -154,27 +154,47 @@
     };
     //loadFilms();
 
+    var countries = ["UnitedKingdom","Ireland","Portugal","Spain","france","Belgium","Netherlands","Germany","Switzerland","Italy","Denmark","Sweden","Norway","Finland","Austria","CzechRepublic","Slovenia","Croatia","Hungary","Slovakia","Poland","Lithuania","Latvia","Estonia","Belarus","Ukraine","Moldava","Romania","Serbia","BosniaHerzegovina","Montenegro","Albania","Kosovo","Macedonia","Bulgaria","Greece","Iceland"];
+    var countregexp = new RegExp(countries.join('|'),'i');
+
+    function getLongestWords(t) {
+      var text = t.replace(/[^ ]*http[^ ]*/g,'#');
+      var words = text.split(/[\/\n .,!?:;'"“”\(\)]+/);
+      var list = [".."];
+      var w = /[a-zA-Zàâéèêëiîoôöuùûü]{3,}/; // only if contains at least 3 normal chars
+      var r = /([a-zA-Zàâéèêëiîoôöuùûü])\1{2,}/; // avoid repeated chars (x3)
+      words.forEach(function(el) {
+        if(w.test(el) && !r.test(el) && el.indexOf('#')==-1 && el.indexOf('@')!=0 && el.indexOf('parismap')==-1)
+          list.push(el);
+      });
+      return _.sortBy(list,function(t){return -t.length});
+    };
+
 
     // at the end of everything, load the map
     ////////////////////////////////////////////
     var cloudmadeAttribution = 'MD &copy;2011 OSM contribs, Img &copy;2011 CloudMade';
+    
+    ////////////////////////////////////////////
     var pmapconfig = {
       clusterize: false,
-      useServer: false,
+      maxClusterRadius: 50,
+      serverUrl: "//490512b42b.url-de-test.ws",
+      //serverUrl: "//localhost:8080",
       leaflet: {
+        center: L.latLng(48.810236,16.331055),
         zoom: 5,
-        minZoom: 4,
-        maxZoom: 6,
+        minZoom: 5,
+        maxZoom: 7,
         locateButton: false,
-        scrollWheelZoom: false,
+        //scrollWheelZoom: false,
         fullscreenControl: false,
+        maxBounds: L.latLngBounds( L.latLng(34.0162,-11.6015),L.latLng(62.6741,40.9570) )
       },
-      baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.hflfi81j/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
-      markers: {
-        'https://a.tiles.mapbox.com/v3/minut.hflfi81j/markers.geojson':'emi'
-      },
-      icons: {
-        emi: function(p,clustCount) {
+      // preprocess ploufdata at fetch ! (to only do it once !)
+      preplouf: function(p) {
+        var t = p.markertype;
+        if(t=='emi') {
           var video = /:\/\//.test(p.description);
           var vimeo = /vimeo/.test(p.description);
           p.movie = video;
@@ -192,12 +212,41 @@
             p.imgurl = d.replace(/^.*[\/=]([^\/^=]*)].*/,"http://i2.ytimg.com/vi/\$1/hqdefault.jpg");
 
           p.imgurl = p.imgurl.replace(/ /g,"%20");
-
-          console.log("Got: ",p);
+          //console.log("Got: ",p.imgurl);
+        }
+        if(t=='wordeon') {
+          // process longest word
+          var longestW = getLongestWords(p.text);
+          if(longestW.length && /europeinaword/i.test(longestW[0]) ) longestW.shift();
+          if(longestW.length && countregexp.test(longestW[0]) ) longestW.shift();
+          p.theword = (longestW.length ? longestW[0] : "...").toLowerCase();
+        }
+        return p;
+      },
+      icons: {
+        wordeon: function(p,clustCount,children) {
 
           return L.divIcon({
+            iconAnchor:   [0, 0],
             iconSize:     [0, 0],
             html: Handlebars.compile(
+              "<div class='wodon "+p.ptype.split("_")[1]+"'>"+
+                "<div class='bubble'></div>"+
+                "<div class='wordfly'>{{theword}}</div>"+
+                "<div class='popup'><a href='{{link}}' target='_blank'>@{{user.id}}</a><hr>{{text}}</div>"+
+              "</div>"
+            )(p),
+            //html:         "<div class='"+cla+"'><div class='clock "+cclass+"'></div><div class='arro'></div></div>",
+            popupAnchor:  [0, 0],
+            className: clustCount>1 ? "parismap-icon wordeon back" : "parismap-icon wordeon front"
+          });
+        },
+        emi: function(p,clustCount) {
+          var video = /:\/\//.test(p.description);
+          return L.divIcon({
+            iconSize: [22,22],
+            iconAnchor: [0,22],
+            tml: Handlebars.compile(
               '<div class="skull hint--bottom" data-hint="click to watch the film !">'+
                   '<i class="mark fa fa-{{icon}}"></i>'+
                   '<div class="arrow"></div>'+
@@ -219,7 +268,37 @@
       }
     };
 
-	  var p = Ploufmap(pmapconfig);
+
+
+
+	  // var p = Ploufmap(_.extend(pmapconfig, {
+   //    map: "mapfilms",
+   //    //baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.i87kbj5g/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
+   //    baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.hflfi81j/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
+   //    markers: {
+   //      'https://a.tiles.mapbox.com/v3/minut.hflfi81j/markers.geojson':'emi',
+   //    },
+   //  }));
+
+
+
+
+    var q = Ploufmap(_.extend(pmapconfig, {
+      map: "maptweets",
+      baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.i87kbj5g/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
+      //baseLayer: L.tileLayer('http://a.tiles.mapbox.com/v3/minut.hflfi81j/{z}/{x}/{y}.jpg70', {styleId: 22677, attribution: cloudmadeAttribution}), // whole europe
+      markers: {
+        'tweet_eutrack': 'wordeon',
+        'tweet_euword': 'wordeon',
+        'tweet_eusearch': 'wordeon',
+        'tweet_eulocs': 'wordeon',
+      },
+    }));
+
+
+
+
+
 
     // init links from markers (#jumpto_12) to video block id #(12)
 
