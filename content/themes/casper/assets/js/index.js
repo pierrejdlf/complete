@@ -168,7 +168,7 @@
     function getLongestWords(t) {
       var text = t.replace(/[^ ]*http[^ ]*/g,'#');
       var words = text.split(/[\/\n .,!?:;'"“”\(\)]+/);
-      var list = [".."];
+      var list = ["..."];
       var w = /[a-zA-Zàâéèêëiîoôöuùûü]{3,}/; // only if contains at least 3 normal chars
       var r = /([a-zA-Zàâéèêëiîoôöuùûü])\1{2,}/; // avoid repeated chars (x3)
       words.forEach(function(el) {
@@ -189,12 +189,12 @@
       leaflet: {
         center: L.latLng(48.810236,16.331055),
         zoom: 5,
-        minZoom: 5,
+        minZoom: 4,
         maxZoom: 7,
         locateButton: false,
         scrollWheelZoom: false,
         fullscreenControl: false,
-        maxBounds: L.latLngBounds( L.latLng(34.0162,-11.6015),L.latLng(62.6741,40.9570) )
+        maxBounds: L.latLngBounds( L.latLng(34.010,-11.609),L.latLng(62.680,40.962) )
       },
       // preprocess ploufdata at fetch ! (to only do it once !)
       preplouf: function(p) {
