@@ -240,7 +240,7 @@
             html: Handlebars.compile(
               "<div class='wodon "+p.ptype.split("_")[1]+"'>"+
                 "<div class='bubble'></div>"+
-                "<div class='wordfly'>{{theword}}</div>"+
+                "<div class='wordfly' id='{{pid}}'>{{theword}}</div>"+
                 "<div class='popup'><a href='{{link}}' target='_blank'>@{{user.id}}</a><hr>{{text}}</div>"+
               "</div>"
             )(p),
