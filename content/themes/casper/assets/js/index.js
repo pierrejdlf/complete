@@ -184,7 +184,8 @@
     var pmapconfig = {
       clusterize: false,
       maxClusterRadius: 50,
-      serverUrl: "//490512b42b.url-de-test.ws",
+      serverUrl: "//api.europemovingimage.eu",
+      //serverUrl: "//490512b42b.url-de-test.ws",
       //serverUrl: "//localhost:8080",
       leaflet: {
         center: L.latLng(48.810236,16.331055),
@@ -224,7 +225,9 @@
           var longestW = getLongestWords(p.text);
           if(longestW.length && /europeinaword/i.test(longestW[0]) ) longestW.shift();
           if(longestW.length && countregexp.test(longestW[0]) ) longestW.shift();
-          p.theword = (longestW.length ? longestW[0] : "...").toLowerCase();
+          var w = (longestW.length ? longestW[0] : "...").toLowerCase();
+          var mo = (w.length>15) ? "..." : "";
+          p.theword = w.slice(0,15)+mo;
         }
         return p;
       },
@@ -296,6 +299,13 @@
         'tweet_eusearch': 'wordeon',
         'tweet_eulocs': 'wordeon',
       },
+      blacklisted:[
+        "tw_467285432561336320","tw_467292603952930817","tw_467312767662567424","tw_467313359092994048",
+        "tw_467320056876367872","tw_467330308300607488","tw_467334833380020224","tw_467373641131622400",
+        "tw_467377914041102336","tw_467578331719024640","tw_467580103531462656","tw_467595953617530880",
+        "tw_467596929409765376","tw_467597602780098560","tw_467598428286238720","tw_467598630111948800",
+        "tw_467616135886929921","tw_468063680262074368"
+        ]
     },pmapconfig));
 
 
