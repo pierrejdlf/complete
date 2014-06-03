@@ -4,6 +4,9 @@
 
 /*globals jQuery, document */
 
+
+
+
 (function ($) {
   "use strict";
 
@@ -130,7 +133,7 @@
   							u.replace(/^.*[\/=]([^\/^=]*)].*/,"//www.youtube.com/embed/\$1") :
   							u.replace(/^.*\/(\d*)].*/,"//player.vimeo.com/video/\$1?badge=0&amp;color=ffffff");
   						
-  						console.log("Got video: ",count++,url);
+  						//console.log("Got video: ",count++,url,p);
 
   						var iframe = $("<iframe>").attr({
   							width: "100%",
@@ -141,8 +144,14 @@
   							mozallowfullscreen: "mozallowfullscreen",
   							webkitallowfullscreen: "webkitallowfullscreen",
   						});
+              var button = $("<button/>").attr({
+                onclick:'ploufvoter("'+p.title+'");',
+                class:'votebutton',
+              }).text("Vote for this film");
   						var meta = $("<div class='meta'>")
-  							.append("<div class='word'>"+mtitle+"</div>");
+  							.append("<div class='word'>"+mtitle+"</div>")
+                .append(button);
+                // NB: the voter function is defined at the top.
   						
   						e.append(iframe);
   						e.append(meta);
@@ -152,7 +161,7 @@
   			}
   		});
     };
-    //loadFilms();
+    loadFilms();
 
 
 
@@ -317,7 +326,8 @@
         "tw_469066035786948608","tw_469064803714342912","tw_468723533896753152","tw_470592383953174528",
         "tw_470589187272744960","tw_469878209329516544","tw_469064831476432896","tw_467590588301578240",
         "tw_470928469896228864","tw_470982698446880768","tw_472302657986920448","tw_472312189853130752",
-        "tw_472382730412769280","tw_472801014668881921"
+        "tw_472382730412769280","tw_472801014668881921","tw_470905752975319040","tw_472381232266084352",
+        "tw_472383322501705729"
         ]
     },pmapconfig));
 

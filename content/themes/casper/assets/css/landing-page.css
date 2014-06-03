@@ -307,6 +307,13 @@ form hr {
 	background: red;
 	display: inline-block;
 }
+.word {
+	display: inline-block;
+	margin: 20px;
+}
+.votebutton {
+	font-size: 0.9em;
+}
 
 /*.banner {
 	padding: 100px 0;
