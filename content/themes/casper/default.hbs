@@ -50,14 +50,36 @@
     <script src="/assets/js/locales.js" type="text/javascript"></script>
     <script src="/assets/js/bootstrap.js" type="text/javascript"></script>
 
-    <!-- for modal alert+textfield boxes -->
-    <script src="/assets/js/bootbox.min.js" type="text/javascript"></script>
-
     <script src="/assets/js/parismap.min.js" type="text/javascript"></script>
     <link href="/assets/css/parismap.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body class="{{body_class}}">
+
+    <!-- modal to enter email -->
+    <div id="mailmodal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title" id="mySmallModalLabel">Please confirm your vote...</h4>
+            </div>
+            <div class="modal-body">
+                <p>To validate your vote, you will need to click on the confirmation link we'll send you by email (check your spam folder in case you don't find it). Please note that you can vote for more than one film !</p>
+              <input id="email" maxlength="250" name="email" type="email" placeholder="your@mail.org">
+              <button
+              id="emailbutton"
+              type="button"
+              data-success-text="Yeah !"
+              data-error-text="Oups, error. did you vote already ?"
+              data-fucked-text="Error. please contact us."
+              data-loading-text="Loading... Please wait"
+              class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
 
     {{! Everything else gets inserted here }}
     {{{body}}}
@@ -74,34 +96,47 @@
       // called on voting button click
       var ploufvoter = function(vid) {
         console.log("Voting button video id:",vid);
+        
+        $("#email").removeAttr("disabled");
+        $("#emailbutton").button('reset');
 
-        bootbox.prompt("To vote, please enter your mail below.", function(result) {                
-          if (result === null) {                                             
-            console.log("Mail dismissed.");
-          } else {
-            console.log("Mail to send:",result);
+        $('#mailmodal').modal();
+
+        $("#emailbutton").on("click", function(){
+            var themail = $("#email").val();
+            $("#emailbutton").button('loading');
+            $("#email").attr("disabled", "disabled");
 
             // ajax call
             $.ajax({
               type: "GET",
-              url: "//api.europemovingimage.eu/p/vote",
+              url: "//localhost:8080/p/vote",
+              //url: "//api.europemovingimage.eu/p/vote",
               data: {
                 pid: vid,
-                ident: "mail_dumbydumb@yo.net"
+                ident: "mail_"+themail,
               },
               success: function(data) {
-                console.log("success:",data);
+                console.log("success ?",data);
                 if(data.success) {
-                  bootbox.alert("Cool, "+data.message);
+                    $("#emailbutton").button('success');
+                    $("#emailbutton").off();
+                    setTimeout(function() {
+                        $('#mailmodal').modal("hide");
+                        $("#email").removeAttr("disabled");
+                        $("#emailbutton").button('reset');
+                    },1000);
                 } else {
-                  bootbox.alert("Badly enough, "+data.message);
+                    $("#emailbutton").button('error');
+                    $("#emailbutton").off();
                 }
               },
               error: function(data) {
                 console.log("error:",data);
+                $("#emailbutton").button('fucked');
+                $("#emailbutton").off();
               }
-            });                       
-          }
+            });
         });
       }
     </script>

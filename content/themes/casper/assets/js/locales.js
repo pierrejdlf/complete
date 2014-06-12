@@ -9,6 +9,7 @@ langs['fr'] = {
 		"europe": "appel à films",
 		"conditions": "inscription",
 		"map": "carte",
+    "films":"films",
 		"about": "à propos",
 	},
 	"title": "appel à films",
@@ -117,6 +118,7 @@ langs['en'] = {
 		"europe": "call for films",
 		"conditions": "submission",
 		"map": "map",
+    "films":"films",
 		"about": "about",
 	},
 	"title": "call for films",
@@ -196,6 +198,7 @@ langs['es'] = {
 		"europe": "convocatoria",
 		"conditions": "inscripción",
 		"map": "mapa",
+    "films":"films",
 		"about": "acerca de",
 	},
 	"title": "convocatoria",
@@ -269,74 +272,74 @@ langs['es'] = {
 //// ICI !
 
 
-langs['de'] = {
-	"menu": {
-		"europe": "der convogator",
-		"conditions": "inscripzion",
-		"about": "ûber uns",
-	},
-	"title": "convocatoria",
-	"subtitle": "europe in a word",
-	"call": {
-		"title": "convocatoria",
-		"first": "<i>Europe in a word</i> está abierto a todos los europeos de menos de 30 años.",
-		"second": "Es un proyecto participativo que invita a los cineastas aficionados y profesionales a contar su Europa en una palabra y una pelicula.",
-        "third": "Las pelliculas producirán una cartilla visual de la realidad multifacética de la Europa de hoy.",
-	},
-	"form": {
-		"title":"mandanós tu pelicula",
-		"accept": "he leido y acceptado el <a class='regl'>reglamento</a>",
-		"Name":"Nombre",
-		"Birthdate":"Fecha de nacimiento",
-		"Email":"Email",
-		"Address":"Dirección",
-		"Website":"Sitio web",
-		"Word":"Palabra",
-		"Title":"Titulo",
-		"Link":"Vinculo",
-		"Length":"Duración",
-		"Codirectors":"Co-director/a(s)",
-		"Synopsis":"Synopsis",
-		"submit":"Enviar",
-	},
-	"conditions": ""+
-		"<li><h3>una palabra, una pelí</h3>"+
-		"elige una palabra que asocias con Europa y construye tu pelí alrededor de esta asociación."+
-		"</li>"+
-		"<li><h3>forma</h3>"+
-		"sin restricciones: puede ser una ficción, un ensayo documental, un collage fotográfico, ... lo que quieras !"+
-		"</li>"+
-		"<li><h3>durée</h3>"+
-		"la duración minima es de 1 minuto<br/>"+
-        "la duración maxima es de 10 minutos"+
-		"</li>"+
-		"<li><h3>subtítulos</h3>"+
-		"tu peli tiene que estar subtitulada en inglés"+
-		"</li>"+
-		"<li><h3>fecha límite de inscripción</h3>"+
-		"por favor, rellena el formulario y envíanos tu película antes del <b>30 de mayo 2014</b>" +
-		"</li>"+
-		"<li><h3>premios</h3>"+
-		" los premios serán anunciados el 7 de junio 2014<br/> " +
-        "• Premio del jurado : <i>1.000 €</i><br/>" +
-        "• Premio del público : <i>500 €</i>"+
-        "</li>"+
-       	"<li><h3>reglamento</h3>"+
-		"el reglamento completo esta disponible "+
-		"<a class='regl'>aquí</a>"+
-		"</li>",
-    "abouttitle": "¿ quiénes somos ?",
-	"about": ""+
-        "<p class='lead'>"+
-        "<b>«Un peu plus tôt»</b> es un grupo constituido de una docena de jóvenes escritores, ingenieros, cineastas, diseñadores de Europa."+
-        "</p>"+
-        "<p class='lead'>"+
-        "En 2014, con el proyecto <b>Europe Moving Image</b>, el grupo quiere crear vinculos entre artistas "+
-    	"europeos (aficionados o professionales) que utilizan la imagen como lenguaje. "+
-    	"La convocatoria de películas <b>Europa en una palabra</b> es el primer paso en una reflexión más larga "+
-    	"sobre la cuestión de Europa y de sus representaciones."+ 
-        "</p>"+
-		"<p class='lead'>"+
-		"<a href='mailto:info@europemovingimage.eu'>Contáctanos</a>",
-};
+// langs['de'] = {
+// 	"menu": {
+// 		"europe": "der convogator",
+// 		"conditions": "inscripzion",
+// 		"about": "ûber uns",
+// 	},
+// 	"title": "convocatoria",
+// 	"subtitle": "europe in a word",
+// 	"call": {
+// 		"title": "convocatoria",
+// 		"first": "<i>Europe in a word</i> está abierto a todos los europeos de menos de 30 años.",
+// 		"second": "Es un proyecto participativo que invita a los cineastas aficionados y profesionales a contar su Europa en una palabra y una pelicula.",
+//         "third": "Las pelliculas producirán una cartilla visual de la realidad multifacética de la Europa de hoy.",
+// 	},
+// 	"form": {
+// 		"title":"mandanós tu pelicula",
+// 		"accept": "he leido y acceptado el <a class='regl'>reglamento</a>",
+// 		"Name":"Nombre",
+// 		"Birthdate":"Fecha de nacimiento",
+// 		"Email":"Email",
+// 		"Address":"Dirección",
+// 		"Website":"Sitio web",
+// 		"Word":"Palabra",
+// 		"Title":"Titulo",
+// 		"Link":"Vinculo",
+// 		"Length":"Duración",
+// 		"Codirectors":"Co-director/a(s)",
+// 		"Synopsis":"Synopsis",
+// 		"submit":"Enviar",
+// 	},
+// 	"conditions": ""+
+// 		"<li><h3>una palabra, una pelí</h3>"+
+// 		"elige una palabra que asocias con Europa y construye tu pelí alrededor de esta asociación."+
+// 		"</li>"+
+// 		"<li><h3>forma</h3>"+
+// 		"sin restricciones: puede ser una ficción, un ensayo documental, un collage fotográfico, ... lo que quieras !"+
+// 		"</li>"+
+// 		"<li><h3>durée</h3>"+
+// 		"la duración minima es de 1 minuto<br/>"+
+//         "la duración maxima es de 10 minutos"+
+// 		"</li>"+
+// 		"<li><h3>subtítulos</h3>"+
+// 		"tu peli tiene que estar subtitulada en inglés"+
+// 		"</li>"+
+// 		"<li><h3>fecha límite de inscripción</h3>"+
+// 		"por favor, rellena el formulario y envíanos tu película antes del <b>30 de mayo 2014</b>" +
+// 		"</li>"+
+// 		"<li><h3>premios</h3>"+
+// 		" los premios serán anunciados el 7 de junio 2014<br/> " +
+//         "• Premio del jurado : <i>1.000 €</i><br/>" +
+//         "• Premio del público : <i>500 €</i>"+
+//         "</li>"+
+//        	"<li><h3>reglamento</h3>"+
+// 		"el reglamento completo esta disponible "+
+// 		"<a class='regl'>aquí</a>"+
+// 		"</li>",
+//     "abouttitle": "¿ quiénes somos ?",
+// 	"about": ""+
+//         "<p class='lead'>"+
+//         "<b>«Un peu plus tôt»</b> es un grupo constituido de una docena de jóvenes escritores, ingenieros, cineastas, diseñadores de Europa."+
+//         "</p>"+
+//         "<p class='lead'>"+
+//         "En 2014, con el proyecto <b>Europe Moving Image</b>, el grupo quiere crear vinculos entre artistas "+
+//     	"europeos (aficionados o professionales) que utilizan la imagen como lenguaje. "+
+//     	"La convocatoria de películas <b>Europa en una palabra</b> es el primer paso en una reflexión más larga "+
+//     	"sobre la cuestión de Europa y de sus representaciones."+ 
+//         "</p>"+
+// 		"<p class='lead'>"+
+// 		"<a href='mailto:info@europemovingimage.eu'>Contáctanos</a>",
+// };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

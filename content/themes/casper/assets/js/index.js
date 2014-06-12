@@ -103,6 +103,7 @@
         }
       }
     });
+
     setTimeout(function() {
     	$(".intro-message h3").addClass('loaded');
     },1000);
@@ -122,11 +123,16 @@
   				var count = 0;
   				_.each(data.features, function(f) {
   					var p = f.properties;
+            var mid = p.title.split(/\./)[0];
   					var mtitle = p.title.replace(/\d\./,"");
+            var mabstract = p.description;
   					var isMovie = p["marker-symbol"] == "cinema";
 
   					if(isMovie) {
-  						var e = $("<div>").addClass("film");
+  						var e = $("<div>").attr({
+                class:"film",
+                id:"jumpto_"+mid
+              });
   						var u = p.description;
   						var ytb = /youtu/.test(u); // else assumed: vimeo
   						var url = ytb ? 
@@ -147,10 +153,11 @@
               var button = $("<button/>").attr({
                 onclick:'ploufvoter("'+p.title+'");',
                 class:'votebutton',
-              }).text("Vote for this film");
+              }).text("vote for it !");
   						var meta = $("<div class='meta'>")
   							.append("<div class='word'>"+mtitle+"</div>")
-                .append(button);
+                .append(button)
+                .append("<div class='abstract'>"+mabstract+"</div>");
                 // NB: the voter function is defined at the top.
   						
   						e.append(iframe);
@@ -268,7 +275,7 @@
                   '<i class="mark fa fa-{{icon}}"></i>'+
                   '<div class="arrow"></div>'+
                   '<div class="popup">'+
-                      '<a href="#jumpto_{{jumpto}}">'+
+                      '<a href="#jumpto_{{jumpto}}" class="jumper">'+
                       '<div class="content" style="background-image: url({{imgurl}});">'+
                           '<div class="word">{{title}}</div>'+
                           '{{#if movie}}'+
@@ -330,13 +337,26 @@
         "tw_472383322501705729"
         ]
     },pmapconfig));
+    
+    setTimeout(function() {
+      console.log("Initing jumpers.");
+      // init links from markers (#jumpto_12) to video block id #(12)
+      $('a[href*=#].jumper:not([href=#])').click(function() {
 
-
-
-
-
-
-    // init links from markers (#jumpto_12) to video block id #(12)
+        console.log("jumping film!");
+        
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top - 50
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    },4000);
 
   });
 
