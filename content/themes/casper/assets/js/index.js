@@ -76,19 +76,19 @@
       // });
     });
 
-    // form
-    $("#form").submit(function() {
-      console.log("submitting form");
-  		$.ajax({
-  			type: "GET",
-  			url: "http://localhost:2368/form/submit/",
-  			data: $("#form").serialize(),
-  			success: function(data) {
-  				console.log(data);
-  			},
-  		});
-  		return false; 
-    });
+    // form (deprecated ?)
+    // $("#form").submit(function() {
+    //   console.log("submitting form");
+  		// $.ajax({
+  		// 	type: "GET",
+  		// 	url: "http://localhost:2368/form/submit/",
+  		// 	data: $("#form").serialize(),
+  		// 	success: function(data) {
+  		// 		console.log(data);
+  		// 	},
+  		// });
+  		// return false; 
+    // });
 
     // smooth links to sections
     $('a[href*=#]:not([href=#])').click(function() {
@@ -124,7 +124,9 @@
   				_.each(data.features, function(f) {
   					var p = f.properties;
             var mid = p.title.split(/\./)[0];
-  					var mtitle = p.title.match(/\d*\.([^\.]*)/)[1].replace(/\d*\./,""); // get first part after first .
+  					var mtitle = p.title.match(/\d*\.([^\.]*)/) ?
+              p.title.match(/\d*\.([^\.]*)/)[1].replace(/\d*\./,"") :
+              p.title; // get first part after first .
             var mauthor = p.title.replace(/\d*(\.[^\.]*)+\./,""); // last part after last .
             var mabstract = /€/.test(p.description) ? p.description.split("€")[1] : "-none-";
   					var isMovie = p["marker-symbol"] == "cinema";
@@ -137,7 +139,7 @@
   						var u = p.description;
   						var ytb = /youtu/.test(u); // else assumed: vimeo
   						var url = ytb ? 
-  							u.replace(/^.*[\/=]([^\/^=]*)].*/,"//www.youtube.com/embed/\$1") :
+  							u.replace(/^.*[\/=]([^\/^=]*)].*/,"//www.youtube.com/embed/\$1?autoplay=0&showinfo=0") :
   							u.replace(/^.*\/(\d*)].*/,"//player.vimeo.com/video/\$1?badge=0&amp;color=ffffff");
   						
   						//console.log("Got video: ",count++,url,p);
@@ -228,7 +230,9 @@
           p.movie = video;
           p.icon = video ? "film" : "asterisk";
           p.jumpto = p.title.split(".")[0];
-          p.title = p.title.match(/\d*\.([^\.]*)/)[1].replace(/\d*\./,"");
+          p.title = p.title.match(/\d*\.([^\.]*)/) ?
+            p.title.match(/\d*\.([^\.]*)/)[1].replace(/\d*\./,"") :
+            p.title;
           var d = p.description ;
 
           if(!video) {      // un mot un jour

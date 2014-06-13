@@ -95,6 +95,7 @@
 
       // called on voting button click
       var ploufvoter = function(vid) {
+        vid = vid+"_test";
         console.log("Voting button video id:",vid);
         
         $("#email").removeAttr("disabled");
@@ -110,8 +111,8 @@
             // ajax call
             $.ajax({
               type: "GET",
-              url: "//localhost:8080/p/vote",
-              //url: "//api.europemovingimage.eu/p/vote",
+              //url: "//localhost:8080/p/vote",
+              url: "//api.europemovingimage.eu/p/vote",
               data: {
                 pid: vid,
                 ident: "mail_"+themail,
