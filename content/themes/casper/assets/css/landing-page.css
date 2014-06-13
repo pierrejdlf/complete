@@ -332,6 +332,13 @@ form hr {
 	text-align: left;
 	font-size: 1.7em;
 }
+.film .author {
+	float: right;
+	font-size: 0.8em;
+	color: gray;
+	margin-right: 7px;
+	margin-left: 5px;
+}
 .film .abstract {
 	font-size: 0.8em;
 	text-align: left;

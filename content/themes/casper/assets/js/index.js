@@ -124,8 +124,9 @@
   				_.each(data.features, function(f) {
   					var p = f.properties;
             var mid = p.title.split(/\./)[0];
-  					var mtitle = p.title.replace(/\d\./,"");
-            var mabstract = p.description;
+  					var mtitle = p.title.match(/\d*\.([^\.]*)/)[1].replace(/\d*\./,""); // get first part after first .
+            var mauthor = p.title.replace(/\d*(\.[^\.]*)+\./,""); // last part after last .
+            var mabstract = /€/.test(p.description) ? p.description.split("€")[1] : "-none-";
   					var isMovie = p["marker-symbol"] == "cinema";
 
   					if(isMovie) {
@@ -156,6 +157,7 @@
               }).text("vote for it !");
   						var meta = $("<div class='meta'>")
   							.append("<div class='word'>"+mtitle+"</div>")
+                .append("<div class='author'>"+mauthor+"</div>")
                 .append(button)
                 .append("<div class='abstract'>"+mabstract+"</div>");
                 // NB: the voter function is defined at the top.
@@ -168,7 +170,11 @@
   			}
   		});
     };
-    loadFilms();
+    if(window.location.hash=="#films") {
+      loadFilms();
+    } else {
+      $("#filmtrigger").hide();
+    }
 
 
 
@@ -222,7 +228,7 @@
           p.movie = video;
           p.icon = video ? "film" : "asterisk";
           p.jumpto = p.title.split(".")[0];
-          p.title = p.title.replace(/\d*\./,"");
+          p.title = p.title.match(/\d*\.([^\.]*)/)[1].replace(/\d*\./,"");
           var d = p.description ;
 
           if(!video) {      // un mot un jour
@@ -338,25 +344,26 @@
         ]
     },pmapconfig));
     
-    setTimeout(function() {
-      console.log("Initing jumpers.");
-      // init links from markers (#jumpto_12) to video block id #(12)
-      $('a[href*=#].jumper:not([href=#])').click(function() {
 
-        console.log("jumping film!");
+    // init links from markers (#jumpto_12) to video block id #(12)
+    // setTimeout(function() {
+    //   console.log("Initing jumpers.");
+
+    //   $('a[href*=#].jumper:not([href=#])').click(function() {
+    //     console.log("jumping film!");
         
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-            $('html,body').animate({
-                scrollTop: target.offset().top - 50
-            }, 1000);
-            return false;
-          }
-        }
-      });
-    },4000);
+    //     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+    //       var target = $(this.hash);
+    //       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    //       if (target.length) {
+    //         $('html,body').animate({
+    //             scrollTop: target.offset().top - 50
+    //         }, 1000);
+    //         return false;
+    //       }
+    //     }
+    //   });
+    // },4000);
 
   });
 
