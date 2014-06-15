@@ -181,7 +181,7 @@ function shuffle(array) {
   							webkitallowfullscreen: "webkitallowfullscreen",
   						});
               var button = $("<button/>").attr({
-                onclick:'ploufvoter("'+p.title+'");',
+                onclick:'ploufvoter("'+mid+"."+mtitle+'");',
                 class:'votebutton',
               }).text("vote for it !");
   						var meta = $("<div class='meta'>")
