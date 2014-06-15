@@ -5,6 +5,28 @@
 /*globals jQuery, document */
 
 
+function shuffle(array) {
+  var currentIndex = array.length
+    , temporaryValue
+    , randomIndex
+    ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 
 
 (function ($) {
@@ -104,12 +126,15 @@
       }
     });
 
-    setTimeout(function() {
-    	$(".intro-message h3").addClass('loaded');
-    },1000);
-    setTimeout(function() {
-    	$(".intro-message h1").addClass('loaded');
-    },1500);
+
+    $(".intro-message h3").addClass('loaded');
+    $(".intro-message h1").addClass('loaded');
+    // setTimeout(function() {
+    // 	$(".intro-message h3").addClass('loaded');
+    // },1000);
+    // setTimeout(function() {
+    // 	$(".intro-message h1").addClass('loaded');
+    // },1500);
 
 
     // load the films based on mapbox geojson
@@ -121,12 +146,14 @@
   			success: function(data) {
   				console.log("Geojson list received.",data);
   				var count = 0;
+          var elemArray = [];
   				_.each(data.features, function(f) {
   					var p = f.properties;
             var mid = p.title.split(/\./)[0];
   					var mtitle = p.title.match(/\d*\.([^\.]*)/) ?
               p.title.match(/\d*\.([^\.]*)/)[1].replace(/\d*\./,"") :
               p.title; // get first part after first .
+            mtitle = mtitle.toLowerCase();
             var mauthor = p.title.replace(/\d*(\.[^\.]*)+\./,""); // last part after last .
             var mabstract = /€/.test(p.description) ? p.description.split("€")[1] : "-none-";
   					var isMovie = p["marker-symbol"] == "cinema";
@@ -166,15 +193,22 @@
   						
   						e.append(iframe);
   						e.append(meta);
-  						$(".films").append(e);
+  						elemArray.push(e);
   					}
   				});
+          
+          shuffle(elemArray);
+          _.each(elemArray, function(e) {
+            $(".films").append(e);
+          });
+          
   			}
   		});
     };
     if(window.location.hash=="#films") {
       loadFilms();
     } else {
+      $("#films").hide();
       $("#filmtrigger").hide();
     }
 
@@ -348,6 +382,9 @@
         ]
     },pmapconfig));
     
+
+
+
 
     // init links from markers (#jumpto_12) to video block id #(12)
     // setTimeout(function() {

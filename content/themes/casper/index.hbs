@@ -22,10 +22,11 @@
                     <a href="https://twitter.com/EuMovingImage" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
                     <!-- <a href="http://plus.google.com/u/0/b/110601660133854258591" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a> -->
                     <a href="https://www.facebook.com/europemoving" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a></li>
-                <li><a href="#call" data-localize="menu.europe"></a></li>
-                <li><a href="#conditions" data-localize="menu.conditions"></a></li>
-                <li><a href="#mapanchor" data-localize="menu.map"></a></li>
+                
                 <li><a href="#films" data-localize="menu.films" id="filmtrigger"></a></li>
+                <li><a href="#mapanchor" data-localize="menu.map"></a></li>
+                <li><a href="#call" data-localize="menu.europe"></a></li>
+                <!-- <li><a href="#conditions" data-localize="menu.conditions"></a></li> -->
                 <li><a href="#about" data-localize="menu.about"></a></li>
                 <li>
                     <div class="langselect btn-group btn-group-xs">
@@ -57,24 +58,7 @@
     </div>
 </div>
 
-<div class="content-section-a" id="call">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-5">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading" data-localize="call.title">Call</h2>
-                <p class="lead" data-localize="call.first"></p>
-                <p class="lead" data-localize="call.second"></p>
-                <p class="lead" data-localize="call.third"></p>
-                <p class="lead" data-localize="call.video"></p>
-            </div>
-        </div>
-    </div>
-</div>
-
+<!-- 
 <div class="content-section-b" id="conditions">
 
     <div class="container">
@@ -93,9 +77,10 @@
                 </p>
             </div>
             <div class="col-md-6 col-lg-offset-1">
-                <!-- <div class="clearfix"></div> -->
-                <div>
+<div> -->
 
+
+<!-- 
 <form class="form-horizontal" action="https://docs.google.com/forms/d/1L51Pq2VBTVFuZ-Ym1XsFbW4t4lIMPUWNvQ7GFsgjqwo/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
 
 <div class="form-group">
@@ -201,7 +186,7 @@
 
     </div>
 
-</div>
+</div> -->
 
 <!-- Modal -->
 <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -240,25 +225,45 @@
 </div> -->
 
 
+<div class="content-section-films" id="films">
+    <div class="row">
+        <h1 class="filmstitle" data-localize="watchfilms"></h1>
+    </div>
+    <div class="films"></div>
+</div>
  
 
 <div class="content-section-space" id="mapanchor"></div>
+<h1 class="maptitle" data-localize="map.films"></h1>
+<div id="mapfilms" class="mapband"></div>
 
-    <h1 class="maptitle" data-localize="map.films"></h1>
-    <div id="mapfilms" class="mapband"></div>
+
+<div class="content-section-space"></div>
+<h1 class="maptitle" data-localize="map.tweets"></h1>
+<div id="maptweets" class="mapband"></div>
+
 
 <div class="content-section-space"></div>
 
-    <h1 class="maptitle" data-localize="map.tweets"></h1>
-    <div id="maptweets" class="mapband"></div>
 
-<div class="content-section-space"></div>
+<div class="content-section-a" id="call">
 
+    <div class="container">
 
-
-<div class="content-section-films" id="films">
-    <div class="films"></div>
+        <div class="row">
+            <div class="col-md-5">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading" data-localize="call.title">Call</h2>
+                <p class="lead" data-localize="call.first"></p>
+                <p class="lead" data-localize="call.second"></p>
+                <p class="lead" data-localize="call.third"></p>
+                <p class="lead" data-localize="call.video"></p>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <!-- <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/EuMovingImage" data-widget-id="458232441467961345">Tweets de @EuMovingImage</a> -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
