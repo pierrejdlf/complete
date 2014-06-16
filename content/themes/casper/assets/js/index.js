@@ -205,12 +205,16 @@ function shuffle(array) {
   			}
   		});
     };
-    if(window.location.hash=="#films") {
-      loadFilms();
-    } else {
-      $("#films").hide();
-      $("#filmtrigger").hide();
-    }
+
+    loadFilms();
+
+    // TO HIDE, if you want debug
+    // if(window.location.hash=="#films") {
+    //   loadFilms();
+    // } else {
+    //   $("#films").hide();
+    //   $("#filmtrigger").hide();
+    // }
 
 
 

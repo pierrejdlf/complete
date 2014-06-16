@@ -2028,7 +2028,12 @@
   left: 10px;
   top: 7px;
   color: #FFFFFF;
-  text-shadow: 1px 1px 5px black;
+  text-shadow: 1px 1px 2px black;
+  font-family: "Open sans";
+  font-weight: 600;
+  font-style: italic;
+  font-size: 0.8em;
+  opacity: 0.8;
 }
 .parismap-icon.wordeon .wodon .popup {
   position: absolute;
