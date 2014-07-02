@@ -1,7 +1,7 @@
 var langs = {};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 langs['fr'] = {
-  "watchfilms": "Watch and vote !",
+  "watchfilms": "Watch the films !",
   "map": {
     "films": "¡ l'Europe de vos films !",
     "tweets": "¡ l'Europe de vos mots <a class='hashlink' href='https://twitter.com/search?f=realtime&q=%23europeinaword&src=hash' target='_new'>#europeinaword</a> !",
@@ -111,7 +111,7 @@ langs['fr'] = {
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 langs['en'] = {
-  "watchfilms": "Watch and vote !",
+  "watchfilms": "Watch the films !",
   "map": {
     "films": "¡ Europe with your films !",
     "tweets": "¡ Europe with your <a class='hashlink' href='https://twitter.com/search?f=realtime&q=%23europeinaword&src=hash' target='_new'>#europeinaword</a> words !",
@@ -192,7 +192,7 @@ langs['en'] = {
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 langs['es'] = {
-  "watchfilms": "Watch and vote !",
+  "watchfilms": "Watch the films !",
   "map": {
     "films": "¡ su Europa !",
     "tweets": "¡ Europa con sus palabras <a class='hashlink' href='https://twitter.com/search?f=realtime&q=%23europeinaword&src=hash' target='_new'>#europeinaword</a> !",
@@ -276,7 +276,7 @@ langs['es'] = {
 
 
 // langs['de'] = {
-// "watchfilms": "Watch and vote !",
+// "watchfilms": "Watch the films !",
 // 	"menu": {
 // 		"europe": "der convogator",
 // 		"conditions": "inscripzion",

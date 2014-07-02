@@ -180,14 +180,17 @@ function shuffle(array) {
   							mozallowfullscreen: "mozallowfullscreen",
   							webkitallowfullscreen: "webkitallowfullscreen",
   						});
-              var button = $("<button/>").attr({
-                onclick:'ploufvoter("'+mid+"."+mtitle+'");',
-                class:'votebutton',
-              }).text("vote for it !");
+
+              // deactivated voting button
+              // var button = $("<button/>").attr({
+              //   onclick:'ploufvoter("'+mid+"."+mtitle+'");',
+              //   class:'votebutton',
+              // }).text("vote for it !");
+
   						var meta = $("<div class='meta'>")
   							.append("<div class='word'>"+mtitle+"</div>")
                 .append("<div class='author'>"+mauthor+"</div>")
-                .append(button)
+                //.append(button) // deactivated voting button
                 .append("<div class='abstract'>"+mabstract+"</div>");
                 // NB: the voter function is defined at the top.
   						
