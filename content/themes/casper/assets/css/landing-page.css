@@ -108,7 +108,7 @@ button[disabled] img {
 	margin-bottom: 8px;
 	margin-top: 30%;
 	padding-bottom: 6px;
-	border-bottom: 2px solid rgb(255, 255, 255);
+	/*border-bottom: 2px solid rgb(255, 255, 255);*/
 	font-size: 2.3em;
 }
 .intro-message h3.subtitle {
@@ -300,6 +300,20 @@ form hr {
 
 #emailbutton {
 	margin-left: 5px;
+}
+
+
+.affiche {
+	text-align: center;
+	background: white !important;
+	padding: 10px;
+}
+.affiche img {
+	padding: 15px;
+	max-width: 100%;
+}
+.affiche a {
+	font-size: 0.9em;
 }
 
 /*
