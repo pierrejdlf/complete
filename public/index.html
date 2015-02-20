@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html ng-app="wordComplete">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+	<title>Test</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet/less" href="css/styles.less">
+
+	<script type="text/javascript" src="vendor/less/dist/less.min.js"></script>
+
+	<script src="vendor/underscore/underscore-min.js"></script>
+	<script src="vendor/angular/angular.min.js"></script>
+
+	<script src="js/services.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/main.js"></script>
+
+</head>
+
+<body ng-controller="mainController">
+
+	<div class="container">
+		
+		<input type="text" autofocus="autofocus" focus-on="focusInput">
+
+		<div class="text">
+			<div
+				ng-repeat="w in words"
+				class="word"
+				ng-class="{last:$last}">
+				
+				<div ng-if="!$last" class="term">{{w.name}}</div>
+
+				<div ng-if="$last" class="term back">{{terms|content:current}}</div>
+				<div ng-if="$last" class="term mine">{{words|lastcontent}}</div>
+
+				<div ng-if="$last" class="terms-container">
+					<div
+						ng-repeat="t in terms"
+						class="term prop"
+						ng-class="{current: $index==current}">{{t.name}}</div>
+				</div>
+			
+			</div>
+		</div>
+
+		<div class="bar"></div>
+
+<!-- 		{{meta.message}}
+		Nexts:
+		<div ng-repeat="n in nexts">
+			là: {{n.name}}
+		</div>
+
+
+		<div ng-repeat="w in allwords">
+			là: {{w.name}}
+		</div> -->
+
+	</div>
+
+</body>
+</html>

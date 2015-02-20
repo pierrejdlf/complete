@@ -1,0 +1,18 @@
+{
+  "name": "completeword",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular": "1.3.6",
+    "angular-route": "latest",
+    "angular-animate": "latest",
+    "underscore": "1.5.2",
+    "less": "latest",
+    "normalize.css": "latest",
+    "animate.css": "~3.2.0",
+    "showdown": "~0.3.3",
+    "angular-markdown": "~0.0.1",
+    "texttailor": "https://github.com/jpntex/TextTailor.js/archive/master.zip",
+    "angular-texttailor": "https://github.com/pierrejdlf/angular-texttailor/archive/master.zip",
+    "angular-mousewheel": "~1.0.4"
+  }
+}
