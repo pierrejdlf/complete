@@ -3,7 +3,6 @@ var express  = require('express');
 var app      = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
 var port  	 = process.env.PORT || 8080; 				// set the port
-var database = require('./config/database'); 			// load the database config
 var morgan   = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -12,7 +11,7 @@ var _ = require('underscore');
 var Word = require('./app/models/word');
 
 // configuration ===============================================================
-mongoose.connect('mongodb://localhost/completeB');
+mongoose.connect('mongodb://localhost/completeF');
 
 app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
@@ -39,38 +38,59 @@ fs.readdir(dir, function(err,files){
   var c = 0;
   files.forEach(function(file) {
     c++;
-    fs.readFile(dir+file,'utf-8',function(err,html){
-      if (err) throw err;
-      data[file] = html;
-      if (0===--c) {
-        console.log("All files read!");
-        //console.log(data);
-        //socket.emit('init', {data: data}); }
-        processData(data);
-      };
-    });
+    console.log("f:",file);
+    //if(!/^\./.test(file)) {
+      fs.readFile(dir+file,'utf-8',function(err,html){
+        if (err) throw err;
+        data[file] = html;
+        if (0===--c) {
+          
+          //processData(data);
+
+        };
+      });
+    //}
   });
 });
 
 var processData = function(data) {
 
+  var GLOBALSAVED = 0;
+
   _.each(data, function(v,k) {
     console.log("Processing file:",k);
-    var words = v.toLowerCase().split(" ");
-    var cc = 0;
-    _.each(words, function(w) {
-      //console.log("word: ",w);
-      var newW = {
-        name: w,
-        file: k,
-        index: cc++
-      };
-      Word.findOneAndUpdate( _.omit(newW,"name"), newW, {upsert:true}, function(err,doc) {
-        if (err) { console.log("error: "+err); }
-        else {
-          console.log("saved: ",newW.file, newW.index);
-        }
-      });
+
+    var sentences = v.toLowerCase().split(/[\.\n\r\()]+/).filter(Boolean);
+    
+    _.each(sentences, function(s,sindex) {
+      
+      var words = s.split(/[^\w'\-àâäéèêëiòôöùû]+/).filter(Boolean);
+
+      for(var windex=0; windex<words.length-1; windex++) {
+
+        var gram = words.slice(windex,windex+2);
+        //console.log("gram:",gram);
+        var newW = {
+          from:   words[windex],
+          to:     words[windex+1],
+          file:   k,
+          s:      sindex, // sentence id 
+          w:      windex  // word id
+        };
+        if(words[windex]=='' || words[windex+1]=='')
+          console.log("? ",s);
+
+        GLOBALSAVED += 1;
+        Word.findOneAndUpdate( _.omit(newW,"name"), newW, {upsert:true}, function(err,doc) {
+          if (err) { console.log("error: "+err); }
+          else {
+            //console.log("saved: ",newW.file, newW.s, newW.w);
+            console.log("saving:",GLOBALSAVED);
+            if(0===--GLOBALSAVED)
+              console.log("ALL DONE.");
+          }
+        });
+      }
 
     });
   });

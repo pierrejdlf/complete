@@ -30,23 +30,26 @@
 		<input type="text" autofocus="autofocus" focus-on="focusInput">
 
 		<div class="text">
-			<div
-				ng-repeat="w in words"
-				class="word"
-				ng-class="{last:$last}">
+			<div ng-repeat="p in paragraphs" class="paragraph">
+				<div
+					ng-repeat="w in p.words"
+					class="word"
+					ng-class="{last:$last && $parent.$last}">
+					
+					<div ng-if="!$last" class="term">{{w.content}}</div>
+
+					<div ng-if="$last && $parent.$last" class="term back">{{terms|content:current}}</div>
+					<div ng-if="$last" class="term mine">{{p.words|lastcontent}}<span ng-if="$parent.$parent.$last" class="underscore">_</span></div>
+
+					<div ng-if="$last && $parent.$last" class="terms-container">
+						<div
+							ng-repeat="t in terms"
+							class="term prop"
+							ng-style="{opacity: 0.3 + t.score * 0.7}"
+							ng-class="{current: $index==current}">{{t.content}}</div>
+					</div>
 				
-				<div ng-if="!$last" class="term">{{w.name}}</div>
-
-				<div ng-if="$last" class="term back">{{terms|content:current}}</div>
-				<div ng-if="$last" class="term mine">{{words|lastcontent}}</div>
-
-				<div ng-if="$last" class="terms-container">
-					<div
-						ng-repeat="t in terms"
-						class="term prop"
-						ng-class="{current: $index==current}">{{t.name}}</div>
 				</div>
-			
 			</div>
 		</div>
 
@@ -55,12 +58,12 @@
 <!-- 		{{meta.message}}
 		Nexts:
 		<div ng-repeat="n in nexts">
-			là: {{n.name}}
+			là: {{n.content}}
 		</div>
 
 
 		<div ng-repeat="w in allwords">
-			là: {{w.name}}
+			là: {{w.content}}
 		</div> -->
 
 	</div>

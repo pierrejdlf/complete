@@ -15,7 +15,12 @@ angular.module('wordsController', ['underscore'])
 		function($scope, $http, Words, $document, _) {
 
 		$scope.loading = true;
-		$scope.text = "";
+		$scope.paragraphs = [{
+			words: [{content:""}]
+		}];
+		$scope.kp = 0;
+		$scope.kw = 0;
+
 		$scope.terms = [];
 		$scope.current = 0;
 
@@ -28,14 +33,24 @@ angular.module('wordsController', ['underscore'])
 
 		// keyboard events
 		$document.bind("keydown", function(event) {
-			//console.log("ev: ",event);
+			// console.log("ev: ",event);
 			var c = String.fromCharCode(event.keyCode);
 			//console.log("key: ",c); 
 			var kc = event.keyCode;
 
 			////////////////////////////// MANAGE EVENTS
 			if(kc==8) { // DEL
-				$scope.text = $scope.text.slice(0,-1);
+				var w = $scope.paragraphs[$scope.kp].words[$scope.kw].content;
+				if(w) {
+					$scope.paragraphs[$scope.kp].words[$scope.kw].content = w.slice(0,-1);
+				}
+				else {
+					var a = $scope.paragraphs[$scope.kp].words;
+					if(a.length>1) {
+						$scope.paragraphs[$scope.kp].words.pop();
+						$scope.kw--;
+					}
+				}
 			}
 			if(event.keyIdentifier=="Down") {
 				$scope.current++;
@@ -48,27 +63,48 @@ angular.module('wordsController', ['underscore'])
 					$scope.current = $scope.terms.length-1;
 			}
 			if(event.keyIdentifier=="Enter") {
+				$scope.paragraphs.push({ words:[{content:""}] });
+				$scope.kp ++;
+				$scope.kw = 0;
+				$scope.current = 0;
+				$scope.terms = []; // to avoid flickering
+			}
+			if(kc==32) { // SPACE
 				var cw = $scope.terms[$scope.current];
-				$scope.words.pop();
-				$scope.words.push(cw);
-				$scope.text = _.map($scope.words, function(d){return d.name;}).join(" ")+" ";
+				if(cw) {
+					$scope.paragraphs[$scope.kp].words.pop();
+					$scope.paragraphs[$scope.kp].words.push(cw);
+					$scope.current = 0;
+				} else {
+					$scope.current = 0;
+					// do nothing, space char will go to next word !
+				}
 			}
 
 			////////// a-z | 0-9 | space
-			if((kc>=65 && kc<=90) || (kc>=48 && kc<=57) || kc==32) { // NORMAL CHAR
-				$scope.text += c.toLowerCase();
+			if((kc>=65 && kc<=90) || (kc>=48 && kc<=57)) { // NORMAL CHAR
+				$scope.paragraphs[$scope.kp].words[$scope.kw].content += c.toLowerCase();
+			}
+			if(kc==32) { // SPACE
+				if($scope.paragraphs[$scope.kp].words.slice(-1)[0].content.length) { // non empty last word
+					$scope.paragraphs[$scope.kp].words.push({content:""});
+					$scope.kw ++;
+					$scope.terms = []; // to avoid flickering
+				} else {
+					// do nothing
+				}
 			}
 			
-			$scope.words = _.map($scope.text.split(" "), function(d) {
-				return { name:d };
-			});
 			//var last = _.last($scope.words);
-
-			var lastW = $scope.text.split(" ").slice(-1)[0];
-			console.log("Asking nexts:",lastW);
-			Words.next( {name:lastW} )
+			console.log("ON:", $scope.words);
+			Words.next( {
+					list: _.map($scope.paragraphs[$scope.kp].words.slice(-4), function(w) {
+						return w.content;
+					})
+				})
 				.success(function(data) {
 					$scope.terms = data;
+					console.log(data);
 				});
 		});
 

@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Word', {
-  name: {type : String, default: ''},
+  from: {type : String, default: ''},
+  to: {type : String, default: ''},
   file: String,
-  index: Number 
+  s: Number,
+  w: Number
 });
