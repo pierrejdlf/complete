@@ -5,16 +5,16 @@ angular.module('wordsService', [])
 	.factory('Words', ['$http',function($http) {
 		return {
 			get : function() {
-				return $http.get('/api/words');
+				return $http.get('http://localhost:8080/api/words');
 			},
 			next : function(current) {
-				return $http.post('/api/next', current);
-			},
-			create : function(todoData) {
-				return $http.post('/api/words', todoData);
-			},
-			delete : function(id) {
-				return $http.delete('/api/words/' + id);
+				return $http.post('http://localhost:8080/api/next', current);
 			}
+			// create : function(todoData) {
+			// 	return $http.post('/api/words', todoData);
+			// },
+			// delete : function(id) {
+			// 	return $http.delete('/api/words/' + id);
+			// }
 		}
 	}]);

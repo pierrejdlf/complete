@@ -92,7 +92,7 @@ var processProject = function(project,data) {
           if (err) { console.log("error: "+err); }
           else {
             //console.log("saved: ",newW.file, newW.s, newW.w);
-            process.stdout.write("Saving ... " + GLOBALSAVED + " ...\r");
+            process.stdout.write("Saving ... " + GLOBALSAVED + " \r");
             if(0===--GLOBALSAVED)
               console.log("ALL DONE for:", project);
           }

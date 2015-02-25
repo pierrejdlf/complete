@@ -17,6 +17,10 @@ angular.module('wordsController', ['underscore'])
 		$scope.projects = [
 			{label:'Test', value:'test'},
 			{label:'The list serve', value:'listserve_yaml'},
+			{label:'Homme', value:'cdlm-HF'},
+			{label:'Femme', value:'cdlm-FH'},
+			{label:'Homo', value:'cdlm-HH'},
+			{label:'Lesbienne', value:'cdlm-FF'},
 		];
 
 		$scope.loading = true;
@@ -88,6 +92,8 @@ angular.module('wordsController', ['underscore'])
 				$scope.kw = 0;
 				$scope.current = 0;
 				$scope.terms = []; // to avoid flickering
+
+				window.scrollTo(0,9999);
 			}
 			if(kc==32) { // SPACE
 				var cw = $scope.terms[$scope.current];

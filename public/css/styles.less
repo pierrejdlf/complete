@@ -4,6 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: none;
+  background: lightgrey;
 }
 .container {
   box-sizing: border-box;
@@ -12,12 +13,21 @@ html, body {
   margin: 0;
   padding: 20px;
   color: #535353;
-  background: lightgrey;
 }
 
+h1 {
+  text-align: center;
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #BABABA;
+  font-family: 'Droid Sans Mono';
+  font-weight: 100;
+}
 .text {
   margin-left: 180px;
+  margin-bottom: 100px;
   font-family: 'Droid Sans Mono';
+  font-weight: 100;
   font-size: 17px;
 }
 .paragraph {
@@ -60,8 +70,8 @@ html, body {
 .selector {
   position: absolute;
   text-align: right;
-  width: 140px;
-  margin-left: -150px;
+  width: 100px;
+  margin-left: -110px;
   font-size: 0.6rem;
   select {
     width: 100%;
@@ -69,6 +79,7 @@ html, body {
   }
 }
 input {
+  position: fixed;
   opacity:0;
   pointer-events: none;
 }
