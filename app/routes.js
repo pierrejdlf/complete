@@ -1,4 +1,4 @@
-var Word = require('./app/models').Word;
+var Word = require('./models').Word;
 var _ = require('underscore');
 
 
