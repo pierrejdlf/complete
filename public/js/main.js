@@ -61,6 +61,7 @@ angular.module('wordsController', ['underscore'])
 			//console.log("ev: ",event);
 			//console.log("key: ",c); 
 			
+			var searchNext = false;
 
 			////////////////////////////// MANAGE EVENTS
 			if(kc==8) { // DEL
@@ -115,29 +116,33 @@ angular.module('wordsController', ['underscore'])
 				var c = $scope.char.toLowerCase();
 				//c = $scope.input.slice(-1)[0];
 				$scope.paragraphs[$scope.kp].words[$scope.kw].content += c;
+				searchNext = true;
 			}
 			if(kc==32) { // SPACE
-				if($scope.paragraphs[$scope.kp].words.slice(-1)[0].content.length) { // non empty last word
+				if($scope.paragraphs[$scope.kp].words.slice(-1)[0].content.length) {
+					// non empty last word, go next
 					$scope.paragraphs[$scope.kp].words.push({content:""});
 					$scope.kw ++;
 					$scope.terms = []; // to avoid flickering
+					searchNext = true;
 				} else {
 					// do nothing
 				}
 			}
 			
 			//var last = _.last($scope.words);
-			console.log("ON:", $scope.words);
-			Words.next( {
-					project: 	$scope.paragraphs[$scope.kp].project.value,
-					list: 		_.map($scope.paragraphs[$scope.kp].words.slice(-4), function(w) {
-						return w.content;
+			//console.log("ON:", $scope.words);
+			if(searchNext) {
+				Words.next( {
+						project: 	$scope.paragraphs[$scope.kp].project.value,
+						list: 		_.map($scope.paragraphs[$scope.kp].words.slice(-4), function(w) {
+							return w.content;
+						})
 					})
-				})
-				.success(function(data) {
-					$scope.terms = data;
-					console.log(data);
-				});
+					.success(function(data) {
+						$scope.terms = data;
+					});
+				}
 			});
 		};
 

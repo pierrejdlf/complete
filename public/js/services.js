@@ -4,7 +4,7 @@ angular.module('wordsService', [])
 	// each function returns a promise object 
 	.factory('Words', ['$http',function($http) {
 
-		var host = window.location.host == 'localhost' ? 'http://localhost:8080/' : 'http://d84bd554fa.url-de-test.ws/';
+		var host = window.location.host == 'localhosto' ? 'http://localhost:8080/' : 'http://d84bd554fa.url-de-test.ws/';
 
 		console.log("Host:",host);
 		
