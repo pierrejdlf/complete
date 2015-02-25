@@ -87,13 +87,15 @@ angular.module('wordsController', ['underscore'])
 					$scope.current = $scope.terms.length-1;
 			}
 			if(event.keyIdentifier=="Enter") {
-				$scope.paragraphs.push({ words:[{content:""}], project:$scope.projects[0] });
-				$scope.kp ++;
-				$scope.kw = 0;
-				$scope.current = 0;
-				$scope.terms = []; // to avoid flickering
+				if($scope.paragraphs[$scope.kp].words.length>1) { // only if p not null
+					$scope.paragraphs.push({ words:[{content:""}], project:$scope.projects[0] });
+					$scope.kp ++;
+					$scope.kw = 0;
+					$scope.current = 0;
+					$scope.terms = []; // to avoid flickering
 
-				window.scrollTo(0,9999);
+					window.scrollTo(0,9999);
+				}
 			}
 			if(kc==32) { // SPACE
 				var cw = $scope.terms[$scope.current];
