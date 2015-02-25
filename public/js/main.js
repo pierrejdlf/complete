@@ -52,15 +52,15 @@ angular.module('wordsController', ['underscore'])
 
 			if($scope.input) {
 				$scope.char = $scope.input.slice(-1)[0];
-				console.log("typed:",$scope.char);
+				//console.log("typed:",$scope.char);
 			}
 			$scope.input = null;
-			console.log("now:",$scope.input);
 
-			console.log("ev: ",event);
 			var c = String.fromCharCode(event.keyCode);
-			//console.log("key: ",c); 
 			var kc = event.keyCode;
+			//console.log("ev: ",event);
+			//console.log("key: ",c); 
+			
 
 			////////////////////////////// MANAGE EVENTS
 			if(kc==8) { // DEL

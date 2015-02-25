@@ -3,12 +3,17 @@ angular.module('wordsService', [])
 	// super simple service
 	// each function returns a promise object 
 	.factory('Words', ['$http',function($http) {
+
+		var host = window.location.host == 'localhost' ? 'http://localhost:8080/' : 'd84bd554fa.url-de-test.ws/';
+
+		console.log("Host:",host);
+		
 		return {
 			get : function() {
-				return $http.get('http://localhost:8080/api/words');
+				return $http.get(host+'api/words');
 			},
 			next : function(current) {
-				return $http.post('http://localhost:8080/api/next', current);
+				return $http.post(host+'api/next', current);
 			}
 			// create : function(todoData) {
 			// 	return $http.post('/api/words', todoData);
