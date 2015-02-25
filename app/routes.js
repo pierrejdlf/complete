@@ -1,15 +1,16 @@
-var Word = require('./models/word');
+var Word = require('app/models').Word;
 var _ = require('underscore');
 
 
 
-var searchPast = function(terms, ends) {
+var searchPast = function(project, terms, ends) {
 	
 	var NEXT = {};
 
 	if(terms.length==1 && terms[0].length>0) {
 
 		Word.find({
+			project: project,
 			from: new RegExp('^'+terms[0],'i'),
 		}).exec(function(err, cs) {
 			if (err) console.log("err",err);
@@ -38,6 +39,7 @@ var searchPast = function(terms, ends) {
 
 	} else {
 		Word.find({
+			project: project,
 			from: terms.slice(-2)[0],
 			to: 	new RegExp('^'+terms.slice(-1)[0],'i')
 		}).limit(50).exec(function(err, cs) {
@@ -65,6 +67,7 @@ var searchPast = function(terms, ends) {
 						}
 
 						Word.find({
+							project: project,
 							to: c.from
 						}).limit(40).exec(function(err, ps) {
 							if (err) res.send(err);
@@ -88,6 +91,7 @@ var searchPast = function(terms, ends) {
 											console.log("CHAIN =",p.from,c.from,c.to);
 
 											Word.find({
+												project: project,
 												to: p.from
 											}).limit(30).exec(function(err, pps) {
 												//console.log("-- found re past:",pps.length);
@@ -153,10 +157,11 @@ module.exports = function(app) {
 	// NEXT
 	app.post('/api/next', function(req, res) {
 		
+		var project = req.body.project;
 		var terms = req.body.list; // A B C d ... NEXT
 		console.log("Getting nexts of:",terms);
 
-		searchPast(terms, function(list) {
+		searchPast(project, terms, function(list) {
 			var out = _.sortBy(list, function(d) {
 				return -d.score;
 			});
@@ -202,7 +207,9 @@ module.exports = function(app) {
 	});
 
 	// application -------------------------------------------------------------
-	app.get('*', function(req, res) {
-		res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
-	});
+	
+	// app.get('*', function(req, res) {
+	// 	res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+	// });
+
 };

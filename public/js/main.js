@@ -11,29 +11,49 @@ angular.module('wordsController', ['underscore'])
 
 	// inject the Todo service factory into our controller
 	.controller('mainController',[
-		'$scope','$http','Words','$document','_',
-		function($scope, $http, Words, $document, _) {
+		'$scope','$http','Words','$document','_','$timeout',
+		function($scope, $http, Words, $document, _, $timeout) {
+
+		$scope.projects = [
+			{label:'Test', value:'test'},
+			{label:'The list serve', value:'listserve_yaml'},
+		];
 
 		$scope.loading = true;
 		$scope.paragraphs = [{
-			words: [{content:""}]
+			words: [{content:""}],
+			project: $scope.projects[0]
 		}];
 		$scope.kp = 0;
 		$scope.kw = 0;
-
+		$scope.input = "";
+		$scope.char = "";
 		$scope.terms = [];
 		$scope.current = 0;
 
 		console.log("Hello space.");
 
 		// every click focus invisible input
-		$document.on("click", function(event){
+		$scope.focus = function() {
 			$scope.$broadcast('focusInput');
+		}
+		$document.on("click", function(event){
+			$scope.focus();
 		});
 
-		// keyboard events
-		$document.bind("keydown", function(event) {
-			// console.log("ev: ",event);
+		$scope.inputted = function(event) {
+
+
+			$timeout(function() {
+
+			if($scope.input) {
+				$scope.char = $scope.input.slice(-1)[0];
+				console.log("typed:",$scope.char);
+			}
+			$scope.input = null;
+			console.log("now:",$scope.input);
+
+			console.log("ev: ",event);
 			var c = String.fromCharCode(event.keyCode);
 			//console.log("key: ",c); 
 			var kc = event.keyCode;
@@ -63,7 +83,7 @@ angular.module('wordsController', ['underscore'])
 					$scope.current = $scope.terms.length-1;
 			}
 			if(event.keyIdentifier=="Enter") {
-				$scope.paragraphs.push({ words:[{content:""}] });
+				$scope.paragraphs.push({ words:[{content:""}], project:$scope.projects[0] });
 				$scope.kp ++;
 				$scope.kw = 0;
 				$scope.current = 0;
@@ -82,8 +102,11 @@ angular.module('wordsController', ['underscore'])
 			}
 
 			////////// a-z | 0-9 | space
-			if((kc>=65 && kc<=90) || (kc>=48 && kc<=57)) { // NORMAL CHAR
-				$scope.paragraphs[$scope.kp].words[$scope.kw].content += c.toLowerCase();
+			//if((kc>=65 && kc<=90) || (kc>=48 && kc<=57)) { // NORMAL CHAR
+			if((kc>=65 && kc<=90) || (kc>=48 && kc<=57) || kc==222 || kc==189) { // NORMAL CHAR az 09 ' -
+				var c = $scope.char.toLowerCase();
+				//c = $scope.input.slice(-1)[0];
+				$scope.paragraphs[$scope.kp].words[$scope.kw].content += c;
 			}
 			if(kc==32) { // SPACE
 				if($scope.paragraphs[$scope.kp].words.slice(-1)[0].content.length) { // non empty last word
@@ -98,7 +121,8 @@ angular.module('wordsController', ['underscore'])
 			//var last = _.last($scope.words);
 			console.log("ON:", $scope.words);
 			Words.next( {
-					list: _.map($scope.paragraphs[$scope.kp].words.slice(-4), function(w) {
+					project: 	$scope.paragraphs[$scope.kp].project.value,
+					list: 		_.map($scope.paragraphs[$scope.kp].words.slice(-4), function(w) {
 						return w.content;
 					})
 				})
@@ -106,7 +130,8 @@ angular.module('wordsController', ['underscore'])
 					$scope.terms = data;
 					console.log(data);
 				});
-		});
+			});
+		};
 
 		// GET
 		// Words.get()
