@@ -147,9 +147,9 @@ module.exports = function(app) {
 
 	// GET
 	app.get('/api/words', function(req, res) {
-		Word.find(function(err, docs) {
+		Word.find().limit(20).exec(function(err, docs) {
 			if (err) res.send(err)
-				console.log("Got all: ",docs.length);
+				console.log("Got: ",docs.length);
 			res.json(docs);
 		});
 	});
@@ -178,33 +178,33 @@ module.exports = function(app) {
 
 
 	// create todo and send back all todos after creation
-	app.post('/api/words', function(req, res) {
+	// app.post('/api/words', function(req, res) {
 
-		// create a todo, information comes from AJAX request from Angular
-		Word.create({
-			text : req.body.text,
-			done : false
-		}, function(err, Word) {
-			if (err)
-				res.send(err);
+	// 	// create a todo, information comes from AJAX request from Angular
+	// 	Word.create({
+	// 		text : req.body.text,
+	// 		done : false
+	// 	}, function(err, Word) {
+	// 		if (err)
+	// 			res.send(err);
 
-			// get and return all the Words after you create another
-			getWords(res);
-		});
+	// 		// get and return all the Words after you create another
+	// 		getWords(res);
+	// 	});
 
-	});
+	// });
 
 	// delete a Word
-	app.delete('/api/words/:word_id', function(req, res) {
-		Word.remove({
-			_id : req.params.Word_id
-		}, function(err, todo) {
-			if (err)
-				res.send(err);
+	// app.delete('/api/words/:word_id', function(req, res) {
+	// 	Word.remove({
+	// 		_id : req.params.Word_id
+	// 	}, function(err, todo) {
+	// 		if (err)
+	// 			res.send(err);
 
-			getTodos(res);
-		});
-	});
+	// 		getTodos(res);
+	// 	});
+	// });
 
 	// application -------------------------------------------------------------
 

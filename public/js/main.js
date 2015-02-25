@@ -16,7 +16,7 @@ angular.module('wordsController', ['underscore'])
 
 		$scope.projects = [
 			{label:'Test', value:'test'},
-			{label:'The list serve', value:'listserve_yaml'},
+			{label:'The Listserve', value:'listserve_yaml'},
 			{label:'Homme', value:'cdlm-HF'},
 			{label:'Femme', value:'cdlm-FH'},
 			{label:'Homo', value:'cdlm-HH'},
