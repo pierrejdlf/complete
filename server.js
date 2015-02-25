@@ -41,7 +41,8 @@ console.log("App listening on port " + port);
 mongoose.connect('mongodb://localhost/completeme', function(err) {
   if (err) {
     console.log("Mongo problem.",err);
-  } else
+  } else {
     console.log("Mongo connected.");
     worker.start();
+  }
 });
